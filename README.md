@@ -91,34 +91,22 @@
 ### 📊 GitHub Stats
 
 <div align="center">
-  <!-- Streak Stats Card -->
   <a href="https://github.com/Mubashir-114">
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=Mubashir-114&theme=tokyonight&hide_border=true&border_radius=8" alt="GitHub Streak" />
   </a>
 </div>
 
-<br/>
-
-<div align="center">
-  <!-- Overview Stats Card -->
-  <a href="https://github.com/Mubashir-114">
-    <img src="https://github-readme-stats.vercel.app/api?username=Mubashir-114&show_icons=true&theme=tokyonight&hide_border=true&border_radius=8&count_private=true" alt="Mubashir's GitHub Stats" />
-  </a>
-  <!-- Top Languages Card -->
-  <a href="https://github.com/Mubashir-114">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mubashir-114&layout=compact&theme=tokyonight&hide_border=true&border_radius=8" alt="Top Languages" />
-  </a>
-</div>
-
 ---
 
-### ❤️ Support Me
+### 🤝 Let's Collaborate!
 
 <p align="center">
-  <a href="https://www.buymeacoffee.com/YOUR_USERNAME" target="_blank">
-    <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
-  </a>
-  <a href="https://github.com/sponsors/Mubashir-114" target="_blank">
-    <img src="https://img.shields.io/badge/Sponsor_on_GitHub-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor" />
+  I'm always excited to work on ambitious ideas, open-source projects, or new roles.<br/>
+  Got an idea or looking for a developer?
+</p>
+
+<p align="center">
+  <a href="mailto:mklmubashir575@gmail.com">
+    <img src="https://img.shields.io/badge/Say_Hello-👉_Get_In_Touch-blueviolet?style=for-the-badge&logo=telegram" alt="Say Hello" />
   </a>
 </p>
