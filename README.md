@@ -6,22 +6,20 @@
 
 <h3><code>Mubashir-114@github ~ $ whoami</code></h3>
 
-<table>
+<table width="100%">
 <tr>
-<td valign="top"><img src="./avi-ascii.svg" width="370" alt="Mubasheer KC — ASCII portrait" /></td>
-<td valign="top"><img src="./wordmark.svg" width="490" alt="Mubasheer KC — 3D ASCII wordmark" /></td>
+<td width="50%" align="center" valign="top"><img src="./avi-ascii.svg" width="100%" alt="Mubasheer KC — ASCII portrait" /></td>
+<td width="50%" align="center" valign="top"><img src="./wordmark.svg" width="100%" alt="Mubasheer KC — 3D ASCII wordmark" /></td>
 </tr>
 </table>
 
-<br>
-<br>
+<br />
 
 <h3><code>Mubashir-114@github ~ $ ./contributions.sh</code></h3>
 
-<img src="./contrib-heatmap.svg" width="860" alt="GitHub contribution graph — auto-refreshed daily" />
+<img src="./contrib-heatmap.svg" width="100%" alt="GitHub contribution graph — auto-refreshed daily" />
 
-<br>
-<br>
+<br />
 
 <h3><code>Mubashir-114@github ~ $ ./links.sh</code></h3>
 
