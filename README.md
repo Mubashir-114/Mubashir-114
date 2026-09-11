@@ -89,32 +89,19 @@
 ---
 
 <!-- 📊 GitHub Stats Section -->
-<h3 align="center">📊 GitHub Activity & Stats</h3>
+<h3 align="center">📊 GitHub Streak</h3>
 
 <div align="center">
-  <table border="0">
-    <tr>
-      <td align="center" valign="middle">
-        <a href="https://github.com/Mubashir-114">
-          <img 
-            src="https://github-readme-stats.vercel.app/api?username=Mubashir-114&show_icons=true&theme=tokyonight&hide_border=true&border_radius=8&count_private=true" 
-            alt="Mubasheer's GitHub Stats" 
-            height="180" 
-          />
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://github.com/Mubashir-114">
-          <img 
-            src="https://streak-stats.demolab.com/?user=Mubashir-114&theme=tokyonight&hide_border=true&border_radius=8&timezone=Asia/Kolkata" 
-            alt="Mubasheer's GitHub Streak" 
-            height="180" 
-          />
-        </a>
-      </td>
-    </tr>
-  </table>
+  <a href="https://github.com/Mubashir-114">
+    <img 
+      src="https://streak-stats.demolab.com/?user=Mubashir-114&theme=tokyonight&hide_border=true&border_radius=8&timezone=Asia/Kolkata&card_width=500" 
+      alt="GitHub Streak" 
+    />
+  </a>
 </div>
+
+
+
 
 
 ### 🤝 Let's Collaborate!
