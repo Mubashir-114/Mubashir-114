@@ -88,15 +88,34 @@
 
 ---
 
-### 📊 GitHub Stats
+<!-- 📊 GitHub Stats Section -->
+<h3 align="center">📊 GitHub Activity & Stats</h3>
 
 <div align="center">
-  <a href="https://github.com/Mubashir-114">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Mubashir-114&theme=tokyonight&hide_border=true&border_radius=8" alt="GitHub Streak" />
-  </a>
+  <table border="0">
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://github.com/Mubashir-114">
+          <img 
+            src="https://github-readme-stats.vercel.app/api?username=Mubashir-114&show_icons=true&theme=tokyonight&hide_border=true&border_radius=8&count_private=true" 
+            alt="Mubasheer's GitHub Stats" 
+            height="180" 
+          />
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://github.com/Mubashir-114">
+          <img 
+            src="https://streak-stats.demolab.com/?user=Mubashir-114&theme=tokyonight&hide_border=true&border_radius=8&timezone=Asia/Kolkata" 
+            alt="Mubasheer's GitHub Streak" 
+            height="180" 
+          />
+        </a>
+      </td>
+    </tr>
+  </table>
 </div>
 
----
 
 ### 🤝 Let's Collaborate!
 
