@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/22107794/139580686-887df369-edb8-4bc8-b607-4fbf6d7e4866.gif" width="100%" alt="Banner" />
+  <img src="https://user-images.githubusercontent.com/22107794/139580686-887df369-ed8b-4bc8-b607-4fbf6d7e4866.gif" width="100%" alt="Banner" />
 </div>
 
 <h1 align="center">
@@ -46,7 +46,7 @@
 ### 🌐 Connect With Me
 
 <p align="center">
-  <a href="https://linkedin.com/in/mubashir-kc" target="_blank">
+  <a href="https://www.linkedin.com/in/mubashir-kc-b630b73a4" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="mailto:mklmubashir575@gmail.com" target="_blank">
