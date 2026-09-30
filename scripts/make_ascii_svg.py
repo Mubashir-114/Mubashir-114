@@ -99,8 +99,8 @@ parts.append(f'<rect width="{CANVAS_W}" height="{CANVAS_H}" rx="12" fill="url(#b
 parts.append(f'<rect x="0.5" y="0.5" width="{CANVAS_W-1}" height="{CANVAS_H-1}" rx="12" '
              f'fill="none" stroke="{FRAME}" stroke-width="1"/>')
 
-USER_HANDLE = os.environ.get("GH_PROFILE_USER", "user")
-FULL_NAME = os.environ.get("PROFILE_FULL_NAME", "Your Name")
+USER_HANDLE = os.environ.get("GH_PROFILE_USER", "Mubashir-114")
+FULL_NAME = os.environ.get("PROFILE_FULL_NAME", "Mubasheer KC")
 
 parts.append(f'<line x1="0" y1="{TITLEBAR_H}" x2="{CANVAS_W}" y2="{TITLEBAR_H}" stroke="{FRAME}"/>')
 for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):

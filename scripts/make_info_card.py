@@ -43,30 +43,28 @@ ACCENT = "#22d3ee"
 #    ("bul", text)          -> green dot + light bullet
 #    ("gap",)               -> a little vertical space
 # ===========================================================================
-HOST = "hxrshityadav"   # shown as  hxrshityadav@github  in the header
+HOST = "Mubashir-114"
 
 ROWS = [
     ("host",),
-    ("kv", "Now",      "Fullstack Developer & AI Builder"),
-    ("kv", "Focus",    "SaaS products · developer tooling"),
-    ("kv", "Building", "AI-powered web apps end-to-end"),
+    ("kv", "Now",      "Full-stack Developer"),
+    ("kv", "Focus",    "Product interfaces and platforms"),
+    ("kv", "Building", "Web, backend, and mobile systems"),
     ("gap",),
     ("sec", "Stack"),
-    ("kv", "Frontend",  "React · Next.js · TypeScript"),
-    ("kv", "Backend",   "Node.js · Express · PostgreSQL"),
-    ("kv", "AI / ML",   "OpenAI · LangChain · Hugging Face"),
-    ("kv", "Cloud",     "Vercel · Docker · AWS"),
-    ("kv", "Tools",     "Git · Prisma · Tailwind CSS"),
+    ("kv", "Frontend",  "React / Vite / Tailwind CSS"),
+    ("kv", "Backend",   "Django / Channels / MySQL"),
+    ("kv", "Mobile",    "Flutter / Dart / Provider"),
+    ("kv", "AI",        "Gemini-assisted workflows"),
+    ("kv", "Tools",     "Git / Docker / Postman / Figma"),
     ("gap",),
     ("sec", "Links"),
-    ("kv", "Portfolio", "harshityadav.dev"),
-    ("kv", "LinkedIn",  "in/hxrshityadav"),
-    ("kv", "X / Twitter", "@harshityadav"),
-    ("kv", "Instagram", "@hxrshityadav"),
+    ("kv", "GitHub",    "github.com/Mubashir-114"),
+    ("kv", "LinkedIn",  "in/mubashir-kc-b630b73a4"),
     ("gap",),
     ("sec", "Highlights"),
-    ("bul", "Open-source contributor & AI app builder"),
-    ("bul", "Ships full products solo, fast"),
+    ("bul", "Multi-role Django product platforms"),
+    ("bul", "React interfaces and Flutter applications"),
 ]
 
 

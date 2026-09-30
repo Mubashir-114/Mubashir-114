@@ -17,13 +17,17 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-USERNAME = os.environ.get("GH_PROFILE_USER", "YOUR_GITHUB_USERNAME")
+USERNAME = os.environ.get("GH_PROFILE_USER", "Mubashir-114")
 URL = f"https://github.com/users/{USERNAME}/contributions"
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contributions.json")
 
 
 def fetch_days():
-    resp = requests.get(URL, headers={"User-Agent": "profile-readme-bot/1.0"}, timeout=30)
+    resp = requests.get(
+        URL,
+        headers={"User-Agent": "Mubashir-114-profile-art/1.0"},
+        timeout=30,
+    )
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -99,7 +103,7 @@ def build_data(days):
 
     return {
         "username": USERNAME,
-        "generated_at": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "range": {"start": days[0]["date"], "end": days[-1]["date"]},
         "total_contributions": total,
         "active_days": active_days,
@@ -116,7 +120,7 @@ if __name__ == "__main__":
     days = fetch_days()
     data = build_data(days)
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
-    with open(OUT_PATH, "w") as f:
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
     print(f"wrote {OUT_PATH}: {data['total_contributions']} contributions, "
           f"current streak {data['current_streak']['length']}, "

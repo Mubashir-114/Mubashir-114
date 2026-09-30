@@ -16,8 +16,8 @@ HERE = os.path.dirname(__file__)
 IN_PATH = os.path.join(HERE, "..", "data", "contributions.json")
 OUT_PATH = os.path.join(HERE, "..", "contrib-heatmap.svg")
 
-# GitHub-ish green ramp: empty -> brightest. Level 5 is a brighter neon top end.
-PALETTE = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353", "#69f0a0"]
+# Empty -> cyan -> blue -> violet. Shared with assets/header.svg.
+PALETTE = ["#161b22", "#164e63", "#0891b2", "#2563eb", "#7c3aed", "#c084fc"]
 
 CELL = 12
 GAP = 3
@@ -27,14 +27,14 @@ LEFT_LABEL_W = 30
 TOP_LABEL_H = 20
 TITLEBAR_H = 30
 
-BG = "#0a0e14"
-BG2 = "#0d1420"
-FRAME = "#1f6feb"
+BG = "#0d1117"
+BG2 = "#111827"
+FRAME = "#30363d"
 MUTED = "#7d8590"
 TEXT = "#e6edf3"
-ACCENT = "#22d3ee"
-GREEN = "#39d353"
-GOLD = "#f2cc60"
+ACCENT = "#5eead4"
+PRIMARY = "#60a5fa"
+HIGHLIGHT = "#c084fc"
 
 # reveal timing (one-shot)
 COL_T = 0.018   # per-column delay contribution (left -> right sweep)
@@ -107,11 +107,17 @@ def render(data):
   100% {{ opacity: 1; transform: translateY(0); }}
 }}
 .c {{ opacity: 0; animation: cell {CELL_DUR:.2f}s cubic-bezier(.2,.8,.2,1) both; }}
+@media (prefers-reduced-motion: reduce) {{
+  .c {{ opacity: 1; animation: none; }}
+}}
 """.strip()
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{canvas_w}" height="{canvas_h}" '
-        f'viewBox="0 0 {canvas_w} {canvas_h}" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">',
+        f'viewBox="0 0 {canvas_w} {canvas_h}" role="img" aria-labelledby="title desc" '
+        f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">',
+        f'<title id="title">{data["username"]} GitHub contribution activity</title>',
+        '<desc id="desc">A one-year contribution grid with total, streak, and best-day statistics.</desc>',
         f'<style>{css}</style>',
         '<defs>'
         f'<linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">'
@@ -125,7 +131,7 @@ def render(data):
     for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
         parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
     parts.append(f'<text x="{canvas_w/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
-                 f'text-anchor="middle">hxrshityadav@github: ~/contributions --graph</text>')
+                 f'text-anchor="middle">{data["username"]}@github: ~/activity --year</text>')
 
     grid_top = TITLEBAR_H + TOP_LABEL_H
     grid_left = PAD + LEFT_LABEL_W
@@ -175,7 +181,7 @@ def render(data):
 
     ly = sep_y + 24
     # left column: big highlighted numbers; right column: context in muted
-    parts.append(f'<text x="{PAD}" y="{ly}" font-size="13" fill="{GREEN}">'
+    parts.append(f'<text x="{PAD}" y="{ly}" font-size="13" fill="{ACCENT}">'
                  f'<tspan font-weight="700">{total:,}</tspan>'
                  f'<tspan fill="{MUTED}"> contributions in the last year</tspan></text>')
     parts.append(f'<text x="{canvas_w - PAD}" y="{ly}" font-size="12" fill="{MUTED}" text-anchor="end">'
@@ -184,16 +190,17 @@ def render(data):
     parts.append(f'<text x="{PAD}" y="{ly}" font-size="13" fill="{MUTED}">current streak '
                  f'<tspan fill="{ACCENT}" font-weight="700">{cs} days</tspan>'
                  f'<tspan fill="{MUTED}">   &#183;   longest </tspan>'
-                 f'<tspan fill="{ACCENT}" font-weight="700">{ls} days</tspan></text>')
+                 f'<tspan fill="{PRIMARY}" font-weight="700">{ls} days</tspan></text>')
     parts.append(f'<text x="{canvas_w - PAD}" y="{ly}" font-size="12" fill="{MUTED}" text-anchor="end">'
-                 f'best day <tspan fill="{GOLD}" font-weight="700">{best["count"]}</tspan> on {best["date"]}</text>')
+                 f'best day <tspan fill="{HIGHLIGHT}" font-weight="700">{best["count"]}</tspan> on {best["date"]}</text>')
 
     parts.append("</svg>")
     return "".join(parts)
 
 
 if __name__ == "__main__":
-    data = json.load(open(IN_PATH))
+    with open(IN_PATH, encoding="utf-8") as data_file:
+        data = json.load(data_file)
     svg = render(data)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         f.write(svg)

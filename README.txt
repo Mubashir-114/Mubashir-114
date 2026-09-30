@@ -1,154 +1,66 @@
-================================================================================
-   ANIMATED TERMINAL GITHUB PROFILE README — TEMPLATE & SETUP GUIDE
-================================================================================
+MUBASHIR-114 PROFILE MAINTENANCE
+================================
 
-This template gives you an elite, monochrome terminal-style GitHub profile:
-  [1] Self-Typing Monochrome ASCII Portrait (with blinking terminal cursor)
-  [2] Extruded 3D ASCII Wordmark (smooth rocking animation, matched height)
-  [3] Live Pop-and-Flash Contribution Heatmap (borderless, animated boxes)
-  [4] Automated GitHub Action (refreshes contribution stats daily on its own)
+This repository powers https://github.com/Mubashir-114.
 
-Everything runs inside pure, self-hosted SVGs embedded in your README.
-Zero third-party paid services, zero API rate limits, zero broken images.
+PROFILE STRUCTURE
+-----------------
 
-================================================================================
-TABLE OF CONTENTS
-================================================================================
-  1. Quick Overview & Folder Structure
-  2. Method 1: The AI Auto-Pilot Setup (Recommended ~ 2 Mins)
-  3. Method 2: Manual Step-by-Step Setup
-  4. How to Push to GitHub & Go Live
-  5. Enabling Daily Auto-Updates (GitHub Actions)
-  6. Tuning Cheatsheet & Customization
+README.md
+  The public profile content. Keep claims grounded in public work and keep the
+  selected-project list short.
 
-================================================================================
-1. FOLDER STRUCTURE
-================================================================================
-  PROMPT.md                 <- Ready-to-use prompt for AI coding tools
-  README.md                 <- The rendered profile that shows on GitHub
-  README.txt                <- This step-by-step guide
-  requirements-local.txt    <- Python deps for 1-time local image & art prep
-  .github/workflows/
-    update-profile-art.yml  <- Daily automation to refresh contribution stats
-  scripts/
-    prep_photo.py           <- Background removal (rembg) + CLAHE contrast
-    make_ascii_svg.py       <- Photo to typing terminal ASCII SVG
-    make_wordmark_svg.py    <- 3D extruded rocking ASCII wordmark SVG
-    generate_streak_svg.py  <- Animated pop-and-flash contribution heatmap SVG
-    fetch_contributions.py  <- Scrapes real GitHub contribution data
-    requirements.txt        <- Lightweight deps needed by daily GitHub Action
+assets/header.svg
+  Responsive hero artwork. Uses SVG/CSS animation only and includes a reduced
+  motion fallback.
 
-================================================================================
-2. METHOD 1: THE AI AUTO-PILOT SETUP (RECOMMENDED - 2 MINUTES)
-================================================================================
-If you use an AI coding assistant (Cursor, Claude Code, Antigravity, Windsurf):
+assets/footer.svg
+  Small closing visual used at the end of the profile.
 
-1. Open this folder in your AI editor.
-2. Put a portrait photo of yourself into this folder (e.g. `photo.png` or `photo.jpg`).
-3. Open `PROMPT.md`.
-4. Fill in the [USER CONFIGURATION] block with your:
-   - GitHub username
-   - Full name & tagline
-   - Wordmark text (e.g. your first name in ALL-CAPS)
-   - Photo file path
-   - Social links (Portfolio, LinkedIn, X, Instagram)
-5. Copy the prompt and paste it into your AI assistant.
-6. The assistant will run all scripts, tune the art, generate the SVGs, and 
-   assemble your `README.md` automatically!
+contrib-heatmap.svg
+  Generated activity visualization. Do not hand-edit it.
 
-================================================================================
-3. METHOD 2: MANUAL STEP-BY-STEP SETUP
-================================================================================
-If you prefer running the commands yourself:
+data/contributions.json
+  Public contribution data used by the renderer. Do not hand-edit it.
 
---- Step A: Install Dependencies ---
-Ensure Python 3.10+ is installed, then run:
-  pip install -r requirements-local.txt
-  pip install -r scripts/requirements.txt
+scripts/fetch_contributions.py
+  Fetches public contribution data directly from GitHub.
 
---- Step B: Generate Your ASCII Portrait ---
-1. Place a portrait photo of yourself in this folder (e.g. `photo.png`).
-2. Run background removal and local contrast boost:
-     python scripts/prep_photo.py photo.png source-prepped.png
-   (This cuts out the background and enhances facial contours with CLAHE).
-3. Open `scripts/make_ascii_svg.py` and update lines 106 & 141 with your name:
-   - Change `harshit@github` to `yourusername@github`
-   - Change `Harshit Yadav` to your name
-4. Generate the animated ASCII portrait SVG:
-     python scripts/make_ascii_svg.py source-prepped.png avi-ascii.svg
-   (Tip: To inspect the static final frame, run with $env:STATIC="1" on Windows
-    or STATIC=1 on macOS/Linux).
+scripts/render_heatmap_svg.py
+  Renders data/contributions.json into contrib-heatmap.svg.
 
---- Step C: Generate Your 3D ASCII Wordmark ---
-1. Open `scripts/make_wordmark_svg.py`:
-   - Set `TEXT = "YOURNAME"` (e.g. "HARSHIT", "ALEX", "SARAH")
-2. Generate the 3D rocking wordmark:
-     python scripts/make_wordmark_svg.py --mode rock --out wordmark.svg
-   The script is pre-tuned so the wordmark height (~385px) perfectly matches
-   your portrait window beside it!
+.github/workflows/update-profile-art.yml
+  Refreshes the contribution data and SVG once a day and can also be run
+  manually from GitHub Actions.
 
---- Step D: Generate Your Animated Contribution Heatmap ---
-Run the heatmap generator with your GitHub username:
-  python scripts/generate_streak_svg.py YOUR_USERNAME contrib-heatmap.svg
-This creates a borderless, transparent animated SVG with pop-and-flash effects.
+LOCAL REFRESH
+-------------
 
---- Step E: Customize README.md ---
-Open `README.md` and replace:
-  - Header prompts: change `harshit@github` to `yourusername@github`
-  - Name and tagline: `Fullstack Developer · AI Builder`
-  - Badges: replace the URLs and usernames with your own links.
+Install the lightweight workflow dependencies:
 
-================================================================================
-4. HOW TO PUSH TO GITHUB & GO LIVE
-================================================================================
-GitHub has a special feature: if you create a repository named EXACTLY your 
-GitHub username, GitHub displays its `README.md` right on your public profile!
+  python -m pip install -r scripts/requirements.txt
 
-1. Go to https://github.com/new
-2. Enter your repository name: EXACTLY your GitHub username (e.g. `hxrshityadav`)
-3. Set visibility to: PUBLIC
-4. Do NOT check "Add a README file" (we already have one).
-5. Click "Create repository".
+Refresh and render:
 
-Now, in your local folder terminal, run:
-  git init
-  git add .
-  git commit -m "feat: animated terminal profile readme"
-  git branch -M main
-  git remote add origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.git
-  git push -u origin main --force
+  $env:GH_PROFILE_USER = "Mubashir-114"
+  python scripts/fetch_contributions.py
+  python scripts/render_heatmap_svg.py
 
-================================================================================
-5. ENABLING DAILY AUTO-UPDATES (GITHUB ACTIONS)
-================================================================================
-The workflow `.github/workflows/update-profile-art.yml` automatically fetches
-your GitHub contribution count and updates your graph every single day.
+PUBLISHING
+----------
 
-To activate it:
-1. In your GitHub repository, click "Settings" (top menu).
-2. On the left sidebar, click "Actions" -> "General".
-3. Scroll down to "Workflow permissions".
-4. Select the radio button: "Read and write permissions".
-5. Click "Save".
-6. Go to the "Actions" tab in your repo:
-   - Click "Update profile art" in the left list.
-   - Click the "Run workflow" button on the right.
-   - Click "Run workflow".
+Review changes before publishing:
 
-Your profile art will now refresh automatically every day at 02:00 UTC!
+  git status --short
+  git diff --check
+  git diff
 
-================================================================================
-6. TUNING CHEATSHEET & CUSTOMIZATION
-================================================================================
-| What you want to adjust       | Where to change it                            |
-| ----------------------------- | --------------------------------------------- |
-| Portrait lighter / darker     | `CONTRAST`, `GAMMA`, `WHITE_FLOOR` in         |
-|                               | `scripts/make_ascii_svg.py`                   |
-| Portrait typing speed         | `ROW_DUR`, `STAGGER` in `make_ascii_svg.py`   |
-| Wordmark font / text          | `TEXT`, `FONT_PATH` in `make_wordmark_svg.py` |
-| Wordmark height matching      | `ROW_MARGIN` in `make_wordmark_svg.py`        |
-| Social links & badges         | URLs and colors inside `README.md`            |
+Then commit and push normally. Do not force-push this profile repository.
 
-================================================================================
-Done! Visit https://github.com/YOUR_USERNAME to admire your new profile!
-================================================================================
+GITHUB ACTIONS
+--------------
+
+The workflow declares contents: write, which is required to commit refreshed
+activity data. In repository settings, Actions workflow permissions must allow
+read and write access. The workflow can then be triggered manually once from
+the Actions tab; the daily schedule handles later updates.

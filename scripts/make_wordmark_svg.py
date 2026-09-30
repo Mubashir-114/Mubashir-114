@@ -55,7 +55,7 @@ if not os.path.exists(DEFAULT_FONT):
 
 FONT_PATH = os.environ.get("WORDMARK_FONT", DEFAULT_FONT)
 FONT_INDEX = int(os.environ.get("WORDMARK_FONT_INDEX", DEFAULT_INDEX))   # face within a .ttc
-TEXT = os.environ.get("WORDMARK_TEXT", "HELLO")
+TEXT = os.environ.get("WORDMARK_TEXT", "MUBASHIR")
 
 MASK_H = 320           # glyph raster height in mask px (drives voxel density)
 TRACKING = 0.18        # extra letter-spacing, in em. keeps letters clearly separated
