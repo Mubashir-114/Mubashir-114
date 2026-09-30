@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="264" viewBox="0 0 760 264" role="img" aria-labelledby="title desc">
+  <title id="title">Provia project card</title>
+  <desc id="desc">Service marketplace connecting customer and provider workflows across discovery, booking, payments, and communication. View the repository on GitHub.</desc>
+  <defs>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3572A5"/>
+      <stop offset="0.72" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-100%" y="-300%" width="300%" height="700%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <clipPath id="topEdge"><rect width="760" height="5" rx="2"/></clipPath>
+  </defs>
+  <style>
+    .surface { fill: #0d1117; }
+    .border { fill: none; stroke: #30363d; }
+    .titleText { fill: #f0f6fc; font: 700 28px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .body { fill: #c9d1d9; font: 18px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .muted { fill: #8b949e; font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .stack { fill: #c9d1d9; font: 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .accentText { fill: #3572A5; }
+    .chip { fill: #111827; stroke: #30363d; }
+    .chipText { fill: #aeb8c4; font: 700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .repo { fill: #34d399; font: 700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    @media (prefers-color-scheme: light) {
+      .surface { fill: #ffffff; }
+      .border { stroke: #d0d7de; }
+      .titleText { fill: #1f2328; }
+      .body, .stack { fill: #24292f; }
+      .muted { fill: #59636e; }
+      .accentText { fill: #24557d; }
+      .chip { fill: #f6f8fa; stroke: #d0d7de; }
+      .chipText { fill: #424a53; }
+      .repo { fill: #0550ae; }
+    }
+    @media (prefers-reduced-motion: reduce) { animate { display: none; } }
+  </style>
+
+  <rect class="surface" x="1" y="1" width="758" height="262" rx="8"/>
+  <rect class="border" x="1" y="1" width="758" height="262" rx="8"/>
+  <rect x="1" y="1" width="758" height="4" rx="2" fill="url(#accentLine)"/>
+  <rect x="-100" y="1" width="90" height="4" fill="#34d399" opacity="0.75" filter="url(#softGlow)" clip-path="url(#topEdge)">
+    <animate attributeName="x" values="-100;770" dur="5.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="1" y="1" width="5" height="262" rx="2" fill="#3572A5"/>
+
+  <text class="muted accentText" x="40" y="40" font-weight="700">02 / PROJECT</text>
+  <circle cx="548" cy="35" r="5" fill="#3572A5">
+    <animate attributeName="opacity" values="1;0.45;1" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <text class="muted" x="720" y="40" text-anchor="end">GITHUB PRIMARY: Python</text>
+  <text class="titleText" x="40" y="78">PROVIA</text>
+  <text class="body" x="40" y="112">Service marketplace connecting customer and provider workflows</text><text class="body" x="40" y="139">across discovery, booking, payments, and communication.</text>
+  <text class="muted" x="40" y="174">STACK</text>
+  <text class="stack" x="91" y="174">Python / Django / MySQL / Channels / Tailwind CSS</text>
+  <rect class="chip" x="40" y="191" width="146" height="30" rx="6"/><text class="chipText" x="112.8" y="211" text-anchor="middle">BOOKING ENGINE</text><rect class="chip" x="196" y="191" width="112" height="30" rx="6"/><text class="chipText" x="251.6" y="211" text-anchor="middle">WEBSOCKETS</text><rect class="chip" x="318" y="191" width="188" height="30" rx="6"/><text class="chipText" x="411.4" y="211" text-anchor="middle">TRANSACTIONAL EMAIL</text>
+  <path d="M40 238H720" stroke="#30363d" stroke-opacity="0.65"/>
+  <text class="repo" x="40" y="253">VIEW REPOSITORY  -&gt;</text>
+</svg>

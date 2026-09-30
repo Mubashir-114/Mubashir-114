@@ -17,6 +17,9 @@ assets/header.svg
 assets/footer.svg
   Small closing visual used at the end of the profile.
 
+assets/projects/*.svg
+  Generated, responsive project cards with GitHub Linguist language accents.
+
 contrib-heatmap.svg
   Generated activity visualization. Do not hand-edit it.
 
@@ -28,6 +31,10 @@ scripts/fetch_contributions.py
 
 scripts/render_heatmap_svg.py
   Renders data/contributions.json into contrib-heatmap.svg.
+
+scripts/render_project_cards.py
+  Generates the four project-card SVGs. Edit project content in this script,
+  then rerun it rather than hand-editing the generated card files.
 
 .github/workflows/update-profile-art.yml
   Refreshes the contribution data and SVG once a day and can also be run

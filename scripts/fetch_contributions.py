@@ -119,6 +119,11 @@ def build_data(days):
 if __name__ == "__main__":
     days = fetch_days()
     data = build_data(days)
+    if os.path.exists(OUT_PATH):
+        with open(OUT_PATH, encoding="utf-8") as existing_file:
+            existing = json.load(existing_file)
+        if existing.get("days") == data["days"]:
+            data["generated_at"] = existing.get("generated_at", data["generated_at"])
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)

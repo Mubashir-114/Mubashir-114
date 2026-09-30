@@ -79,6 +79,7 @@ def build_grid(days):
 
 def render(data):
     days = data["days"]
+    latest_date = data["range"]["end"]
     grid = build_grid(days)
     n_cols = len(grid)
     art_w = n_cols * STEP
@@ -154,9 +155,13 @@ def render(data):
             gy = grid_top + ri * STEP
             delay = ci * COL_T + ri * ROW_T
             plural = "s" if count != 1 else ""
+            latest_marker = (
+                f' stroke="{HIGHLIGHT}" stroke-width="1.5"'
+                if date_s == latest_date else ""
+            )
             parts.append(
                 f'<rect class="c" x="{gx}" y="{gy}" width="{CELL}" height="{CELL}" rx="2.5" '
-                f'fill="{PALETTE[lvl]}" style="animation-delay:{delay:.3f}s">'
+                f'fill="{PALETTE[lvl]}"{latest_marker} style="animation-delay:{delay:.3f}s">'
                 f'<title>{date_s}: {count} contribution{plural}</title></rect>'
             )
 
@@ -176,7 +181,7 @@ def render(data):
     cs = data["current_streak"]["length"]
     ls = data["longest_streak"]["length"]
     total = data["total_contributions"]
-    best = data["best_day"]
+    active_days = data["active_days"]
     rng = data["range"]
 
     ly = sep_y + 24
@@ -192,7 +197,7 @@ def render(data):
                  f'<tspan fill="{MUTED}">   &#183;   longest </tspan>'
                  f'<tspan fill="{PRIMARY}" font-weight="700">{ls} days</tspan></text>')
     parts.append(f'<text x="{canvas_w - PAD}" y="{ly}" font-size="12" fill="{MUTED}" text-anchor="end">'
-                 f'best day <tspan fill="{HIGHLIGHT}" font-weight="700">{best["count"]}</tspan> on {best["date"]}</text>')
+                 f'<tspan fill="{HIGHLIGHT}" font-weight="700">{active_days}</tspan> active days</text>')
 
     parts.append("</svg>")
     return "".join(parts)
