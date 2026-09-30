@@ -8,24 +8,23 @@
   <a href="mailto:mklmubashir575@gmail.com"><strong>Start a conversation</strong></a>
 </p>
 
-## `01 / PROFILE`
+## <img src="./assets/ui/section-01.svg" width="100%" alt="01 / PROFILE - System identity" />
 
 I am **Mubasheer KC**, a full-stack developer focused on production-oriented web and mobile applications. I work across interfaces, backend systems, REST APIs, databases, authentication, role-based workflows, realtime features, payments, and AI integration.
 
-```text
-CURRENT SIGNAL
-+-- Web       React interfaces connected to REST APIs and Django systems
-+-- Platform  Authentication, RBAC, databases, realtime, and business workflows
-\-- Mobile    Flutter applications with structured state and API integration
-```
+<picture>
+  <source media="(max-width: 600px)" srcset="./assets/ui/profile-signal-mobile.svg" />
+  <img src="./assets/ui/profile-signal.svg" width="100%" alt="Current signal: React web interfaces, Django platforms, and structured Flutter applications" />
+</picture>
 
-## `02 / NOW`
+## <img src="./assets/ui/section-02.svg" width="100%" alt="02 / NOW - Active focus" />
 
-- Building product-oriented **React** interfaces with deliberate systems and interaction design.
-- Developing **Django** platforms with authentication, role-based workflows, APIs, and AI-assisted functionality.
-- Building **Flutter** applications around structured architecture, API integration, and practical user workflows.
+<picture>
+  <source media="(max-width: 600px)" srcset="./assets/ui/now-mobile.svg" />
+  <img src="./assets/ui/now.svg" width="100%" alt="Current focus: product-oriented React interfaces, Django platforms, and structured Flutter applications" />
+</picture>
 
-## `03 / SELECTED WORK`
+## <img src="./assets/ui/section-03.svg" width="100%" alt="03 / SELECTED WORK - Featured builds" />
 
 <p align="center">
   <a href="https://github.com/Mubashir-114/kodehax_academy">
@@ -63,40 +62,14 @@ CURRENT SIGNAL
   </a>
 </p>
 
-## `04 / TOOLKIT`
+## <img src="./assets/ui/section-04.svg" width="100%" alt="04 / TOOLKIT - Capability map" />
 
-<table>
-  <tr>
-    <td><strong>Languages</strong></td>
-    <td><code>Python</code> &nbsp; <code>JavaScript</code> &nbsp; <code>Dart</code></td>
-  </tr>
-  <tr>
-    <td><strong>Frontend</strong></td>
-    <td><code>React</code> &nbsp; <code>HTML5</code> &nbsp; <code>CSS3</code> &nbsp; <code>Tailwind CSS</code></td>
-  </tr>
-  <tr>
-    <td><strong>Backend</strong></td>
-    <td><code>Django</code> &nbsp; <code>Node.js</code> &nbsp; <code>Express.js</code></td>
-  </tr>
-  <tr>
-    <td><strong>Mobile &amp; data</strong></td>
-    <td><code>Flutter</code> &nbsp; <code>MySQL</code> &nbsp; <code>MongoDB</code></td>
-  </tr>
-  <tr>
-    <td><strong>Systems &amp; API</strong></td>
-    <td><code>REST APIs</code> &nbsp; <code>WebSockets</code> &nbsp; <code>Authentication</code> &nbsp; <code>RBAC</code></td>
-  </tr>
-  <tr>
-    <td><strong>AI</strong></td>
-    <td><code>Local LLMs</code> &nbsp; <code>Prompt Engineering</code> &nbsp; <code>AI Applications</code></td>
-  </tr>
-  <tr>
-    <td><strong>Workflow</strong></td>
-    <td><code>Git</code> &nbsp; <code>GitHub</code></td>
-  </tr>
-</table>
+<picture>
+  <source media="(max-width: 600px)" srcset="./assets/ui/toolkit-mobile.svg" />
+  <img src="./assets/ui/toolkit.svg" width="100%" alt="Toolkit grouped into languages, frontend, backend, mobile and data, systems and API, AI, and workflow" />
+</picture>
 
-## `05 / ACTIVITY`
+## <img src="./assets/ui/section-05.svg" width="100%" alt="05 / ACTIVITY - Public signal" />
 
 <div align="center">
   <a href="https://github.com/Mubashir-114?tab=overview">
@@ -106,7 +79,7 @@ CURRENT SIGNAL
 
 <sub>The visualization is generated from public GitHub contribution data and refreshed daily by this repository's workflow.</sub>
 
-## `06 / CONNECT`
+## <img src="./assets/ui/section-06.svg" width="100%" alt="06 / CONNECT - Open channel" />
 
 The best collaborations start with a concrete problem. I am interested in product-focused web work, Django platforms, Flutter applications, and useful AI-assisted experiences.
 

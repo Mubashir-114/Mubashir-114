@@ -18,7 +18,17 @@ assets/footer.svg
   Small closing visual used at the end of the profile.
 
 assets/projects/*.svg
-  Generated, responsive project cards with GitHub Linguist language accents.
+  Generated, responsive project cards with project-owned logos and accents.
+
+assets/projects/logos/*
+  Optimized local copies of logo artwork sourced from each featured repository.
+  See assets/projects/logos/SOURCES.md for exact paths.
+
+assets/ui/*.svg
+  Generated section rails and responsive profile, focus, and toolkit panels.
+
+assets/toolkit/icons/*.svg
+  Local Devicon v2.17.0 technology icons. See the adjacent SOURCES.md.
 
 contrib-heatmap.svg
   Generated activity visualization. Do not hand-edit it.
@@ -36,6 +46,9 @@ scripts/render_project_cards.py
   Generates the four project-card SVGs. Edit project content in this script,
   then rerun it rather than hand-editing the generated card files.
 
+scripts/render_profile_ui.py
+  Generates the section rails plus the profile, focus, and toolkit panels.
+
 .github/workflows/update-profile-art.yml
   Refreshes the contribution data and SVG once a day and can also be run
   manually from GitHub Actions.
@@ -52,6 +65,8 @@ Refresh and render:
   $env:GH_PROFILE_USER = "Mubashir-114"
   python scripts/fetch_contributions.py
   python scripts/render_heatmap_svg.py
+  python scripts/render_project_cards.py
+  python scripts/render_profile_ui.py
 
 PUBLISHING
 ----------

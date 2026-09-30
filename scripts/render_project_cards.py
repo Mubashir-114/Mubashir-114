@@ -1,25 +1,32 @@
 #!/usr/bin/env python3
 """Render the self-hosted project cards used by the profile README."""
+import base64
 import html
 import os
 
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(HERE, "..", "assets", "projects")
+LOGO_DIR = os.path.join(OUT_DIR, "logos")
 
-# Primary-language colors are from github-linguist/linguist languages.yml.
+# Accent colors are sampled from each project's own logo artwork.
 PROJECTS = [
     {
         "slug": "kodehax",
         "number": "01",
         "name": "KODEHAX ACADEMY",
+        "logo": "kodehax.png",
         "language": "HTML",
-        "language_color": "#e34c26",
-        "light_accent": "#a83216",
-        "secondary": "#a78bfa",
+        "accent": "#ffffff",
+        "light_accent": "#000000",
+        "secondary": "#ffffff",
         "description": [
             "AI-integrated learning platform for student, teacher, and",
             "administrator workflows.",
+        ],
+        "mobile_description": [
+            "AI-integrated learning platform for student,",
+            "teacher, and administrator workflows.",
         ],
         "stack": "Python / Django / AI integration / MySQL / Tailwind CSS",
         "mobile_stack": ["Python / Django / AI integration", "MySQL / Tailwind CSS"],
@@ -29,13 +36,19 @@ PROJECTS = [
         "slug": "provia",
         "number": "02",
         "name": "PROVIA",
+        "logo": "provia.png",
         "language": "Python",
-        "language_color": "#3572A5",
-        "light_accent": "#24557d",
-        "secondary": "#34d399",
+        "accent": "#fac432",
+        "light_accent": "#695125",
+        "secondary": "#9d9d9d",
         "description": [
             "Service marketplace connecting customer and provider workflows",
             "across discovery, booking, payments, and communication.",
+        ],
+        "mobile_description": [
+            "Service marketplace connecting customer and",
+            "provider workflows across discovery, booking,",
+            "payments, and communication.",
         ],
         "stack": "Python / Django / MySQL / Channels / Tailwind CSS",
         "mobile_stack": ["Python / Django / MySQL", "Channels / Tailwind CSS"],
@@ -45,13 +58,19 @@ PROJECTS = [
         "slug": "fintrack",
         "number": "03",
         "name": "FINTRACK",
+        "logo": "fintrack.png",
         "language": "Dart",
-        "language_color": "#00B4AB",
-        "light_accent": "#007b75",
-        "secondary": "#60a5fa",
+        "accent": "#38a5f7",
+        "light_accent": "#0874da",
+        "secondary": "#fbc723",
         "description": [
             "Cross-platform finance application for transactions, budgets,",
             "reports, and offline-aware mobile workflows.",
+        ],
+        "mobile_description": [
+            "Cross-platform finance application for",
+            "transactions, budgets, reports, and",
+            "offline-aware mobile workflows.",
         ],
         "stack": "Flutter / Dart / Provider / Repository Pattern / REST APIs",
         "mobile_stack": ["Flutter / Dart / Provider", "Repository Pattern / REST APIs"],
@@ -61,13 +80,19 @@ PROJECTS = [
         "slug": "nexo",
         "number": "04",
         "name": "NEXO",
+        "logo": "nexo.svg",
         "language": "JavaScript",
-        "language_color": "#f1e05a",
-        "light_accent": "#806900",
-        "secondary": "#38bdf8",
+        "accent": "#3b82f6",
+        "light_accent": "#1d4ed8",
+        "secondary": "#a855f7",
         "description": [
             "React product interface unifying conversations, projects,",
             "documents, knowledge, search, and workspace analytics.",
+        ],
+        "mobile_description": [
+            "React product interface unifying conversations,",
+            "projects, documents, knowledge, search, and",
+            "workspace analytics.",
         ],
         "stack": "React / Vite / Zustand / Framer Motion / CSS",
         "mobile_stack": ["React / Vite / Zustand", "Framer Motion / CSS"],
@@ -80,11 +105,21 @@ def esc(value):
     return html.escape(value, quote=True)
 
 
+def logo_data_uri(filename):
+    path = os.path.join(LOGO_DIR, filename)
+    extension = os.path.splitext(filename)[1].lower()
+    media_type = "image/svg+xml" if extension == ".svg" else "image/png"
+    with open(path, "rb") as logo_file:
+        encoded = base64.b64encode(logo_file.read()).decode("ascii")
+    return f"data:{media_type};base64,{encoded}"
+
+
 def render_card(project):
     language = esc(project["language"])
-    accent = project["language_color"]
+    accent = project["accent"]
     light_accent = project["light_accent"]
     secondary = project["secondary"]
+    logo = logo_data_uri(project["logo"])
 
     chips = []
     chip_x = 40
@@ -155,7 +190,8 @@ def render_card(project):
     <animate attributeName="opacity" values="1;0.45;1" dur="2.8s" repeatCount="indefinite"/>
   </circle>
   <text class="muted" x="720" y="40" text-anchor="end">GITHUB PRIMARY: {language}</text>
-  <text class="titleText" x="40" y="78">{esc(project["name"])}</text>
+  <image href="{logo}" x="40" y="56" width="24" height="24" preserveAspectRatio="xMidYMid meet"/>
+  <text class="titleText" x="74" y="78">{esc(project["name"])}</text>
   {lines}
   <text class="muted" x="40" y="174">STACK</text>
   <text class="stack" x="91" y="174">{esc(project["stack"])}</text>
@@ -168,9 +204,10 @@ def render_card(project):
 
 def render_mobile_card(project):
     language = esc(project["language"])
-    accent = project["language_color"]
+    accent = project["accent"]
     light_accent = project["light_accent"]
     secondary = project["secondary"]
+    logo = logo_data_uri(project["logo"])
 
     chips = []
     chip_x = 14
@@ -185,8 +222,8 @@ def render_mobile_card(project):
         chip_x += width + 6
 
     description = "".join(
-        f'<text class="body" x="20" y="{99 + index * 22}">{esc(line)}</text>'
-        for index, line in enumerate(project["description"])
+        f'<text class="body" x="20" y="{96 + index * 18}">{esc(line)}</text>'
+        for index, line in enumerate(project["mobile_description"])
     )
     stack = "".join(
         f'<text class="stack" x="20" y="{168 + index * 18}">{esc(line)}</text>'
@@ -209,7 +246,7 @@ def render_mobile_card(project):
     .surface {{ fill: #0d1117; }}
     .border {{ fill: none; stroke: #30363d; }}
     .titleText {{ fill: #f0f6fc; font: 700 22px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }}
-    .body {{ fill: #c9d1d9; font: 13px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }}
+    .body {{ fill: #c9d1d9; font: 12.5px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }}
     .muted {{ fill: #8b949e; font: 8.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
     .stack {{ fill: #c9d1d9; font: 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
     .accentText {{ fill: {accent}; }}
@@ -233,7 +270,8 @@ def render_mobile_card(project):
   <text class="muted accentText" x="20" y="29" font-weight="700">{esc(project["number"])} / PROJECT</text>
   <circle cx="216" cy="25" r="4" fill="{accent}"><animate attributeName="opacity" values="1;0.45;1" dur="2.8s" repeatCount="indefinite"/></circle>
   <text class="muted" x="340" y="29" text-anchor="end">GITHUB PRIMARY: {language}</text>
-  <text class="titleText" x="20" y="65">{esc(project["name"])}</text>
+  <image href="{logo}" x="20" y="45" width="22" height="22" preserveAspectRatio="xMidYMid meet"/>
+  <text class="titleText" x="52" y="65">{esc(project["name"])}</text>
   {description}
   <text class="muted" x="20" y="148">STACK</text>
   {stack}

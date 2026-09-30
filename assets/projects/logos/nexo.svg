@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <!-- Left Pillar Lower Gradient: deep royal / cobalt blue -->
+    <linearGradient id="nexo-left-pillar" x1="8" y1="32" x2="32" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e40af" />
+      <stop offset="35%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <!-- Fold Crease Shadow: simulates depth under the diagonal ribbon fold -->
+    <linearGradient id="nexo-fold-shadow" x1="12" y1="28" x2="28" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b132b" stop-opacity="0.55" />
+      <stop offset="70%" stop-color="#0b132b" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#0b132b" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Continuous Foreground Ribbon Gradient: vibrant cyan to electric blue to indigo/violet -->
+    <linearGradient id="nexo-ribbon" x1="10" y1="8" x2="68" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="25%" stop-color="#3b82f6" />
+      <stop offset="65%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+
+    <!-- Right Pillar Gradient: soft violet / orchid down to purple and deep indigo -->
+    <linearGradient id="nexo-right-pillar" x1="80" y1="8" x2="80" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="30%" stop-color="#a855f7" />
+      <stop offset="70%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <!-- Seam Shadow: subtle depth where the diagonal tucks under the right pillar -->
+    <linearGradient id="nexo-seam-shadow" x1="68" y1="68" x2="60" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b132b" stop-opacity="0.38" />
+      <stop offset="100%" stop-color="#0b132b" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Lower Left Pillar (Under the ribbon fold) -->
+  <path
+    d="M 8,32 L 32,56 L 32,86 A 6,6 0 0,1 26,92 L 24,92 L 8,76 A 6,6 0 0,1 8,70 Z"
+    fill="url(#nexo-left-pillar)"
+  />
+
+  <!-- 2. Cast shadow under the fold on the left pillar -->
+  <path
+    d="M 8,32 L 32,56 L 32,68 L 8,44 Z"
+    fill="url(#nexo-fold-shadow)"
+  />
+
+  <!-- 3. Continuous Foreground Ribbon (Top-left pillar head + diagonal crossbar) -->
+  <path
+    d="M 14,8 L 32,8 L 68,44 L 68,92 L 32,56 L 8,32 L 8,14 A 6,6 0 0,1 14,8 Z"
+    fill="url(#nexo-ribbon)"
+  />
+
+  <!-- 4. Subtle shadow along right seam of diagonal -->
+  <path
+    d="M 60,44 L 68,44 L 68,92 L 60,92 Z"
+    fill="url(#nexo-seam-shadow)"
+  />
+
+  <!-- 5. Right Pillar -->
+  <path
+    d="M 68,8 L 86,26 A 6,6 0 0,1 92,30 L 92,86 A 6,6 0 0,1 86,92 L 68,92 Z"
+    fill="url(#nexo-right-pillar)"
+  />
+</svg>

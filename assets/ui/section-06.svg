@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="52" viewBox="0 0 760 52" role="img" aria-labelledby="title desc">
+  <title id="title">06 / CONNECT</title>
+  <desc id="desc">Open Channel section</desc>
+  <style>
+    
+    .surface { fill: #0d1117; }
+    .surface2 { fill: #111820; }
+    .border { fill: none; stroke: #30363d; }
+    .rule { stroke: #30363d; }
+    .title { fill: #f0f6fc; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .body { fill: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .muted { fill: #8b949e; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .tile { fill: #f6f8fa; stroke: #30363d; }
+    @media (prefers-color-scheme: light) {
+      .surface { fill: #ffffff; }
+      .surface2 { fill: #f6f8fa; }
+      .border, .rule { stroke: #d0d7de; }
+      .title { fill: #1f2328; }
+      .body { fill: #24292f; }
+      .muted { fill: #59636e; }
+      .tile { fill: #ffffff; stroke: #d0d7de; }
+    }
+    @media (prefers-reduced-motion: reduce) { animate { display: none; } }
+
+    .sectionNumber { fill: #fb7185; font: 700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .sectionTitle { font: 700 16px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    .sectionMeta { font: 700 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    @media (max-width: 480px) {
+      .sectionNumber { font-size: 27px; }
+      .sectionTitle { font-size: 28px; }
+      .sectionMeta { font-size: 18px; }
+    }
+  </style>
+  <rect class="surface" x="1" y="1" width="758" height="50" rx="6"/>
+  <rect class="border" x="1" y="1" width="758" height="50" rx="6"/>
+  <rect x="1" y="1" width="5" height="50" rx="2" fill="#fb7185"/>
+  <rect x="15" y="12" width="38" height="28" rx="4" fill="#fb7185" fill-opacity="0.12" stroke="#fb7185" stroke-opacity="0.55"/>
+  <text class="sectionNumber" x="34" y="31" text-anchor="middle">06</text>
+  <text class="title sectionTitle" x="69" y="32">CONNECT</text>
+  <path d="M270 26H590" stroke="#fb7185" stroke-opacity="0.24"/>
+  <circle cx="603" cy="26" r="3" fill="#fb7185"/>
+  <text class="muted sectionMeta" x="738" y="30" text-anchor="end">OPEN CHANNEL</text>
+</svg>

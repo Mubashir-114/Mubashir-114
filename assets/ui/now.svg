@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="218" viewBox="0 0 760 218" role="img" aria-labelledby="title desc">
+  <title id="title">Current focus</title>
+  <desc id="desc">Three active areas: frontend, backend, and mobile development.</desc>
+  <style>
+    
+    .surface { fill: #0d1117; }
+    .surface2 { fill: #111820; }
+    .border { fill: none; stroke: #30363d; }
+    .rule { stroke: #30363d; }
+    .title { fill: #f0f6fc; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .body { fill: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .muted { fill: #8b949e; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .tile { fill: #f6f8fa; stroke: #30363d; }
+    @media (prefers-color-scheme: light) {
+      .surface { fill: #ffffff; }
+      .surface2 { fill: #f6f8fa; }
+      .border, .rule { stroke: #d0d7de; }
+      .title { fill: #1f2328; }
+      .body { fill: #24292f; }
+      .muted { fill: #59636e; }
+      .tile { fill: #ffffff; stroke: #d0d7de; }
+    }
+    @media (prefers-reduced-motion: reduce) { animate { display: none; } }
+
+    .kicker { fill: #f59e0b; font: 700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .index { font: 700 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .label { fill: #8b949e; font: 700 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .copy { font-size: 13px; }
+    @media (prefers-color-scheme: light) { .label { fill: #59636e; } }
+  </style>
+  <rect class="surface" x="1" y="1" width="758" height="216" rx="7"/>
+  <rect class="border" x="1" y="1" width="758" height="216" rx="7"/>
+  <rect x="1" y="1" width="5" height="216" rx="2" fill="#f59e0b"/>
+  <text class="kicker" x="28" y="28">FOCUS QUEUE</text>
+  <text class="muted" x="732" y="28" text-anchor="end" font-size="10">03 ACTIVE TRACKS</text>
+  <rect x="28" y="44" width="30" height="30" rx="5" fill="#60a5fa" fill-opacity="0.12" stroke="#60a5fa" stroke-opacity="0.55"/><text class="index" x="43" y="64" text-anchor="middle" fill="#60a5fa">01</text><text class="label" x="76" y="64">FRONTEND</text><text class="body copy" x="168" y="57">Building product-oriented React interfaces with deliberate systems</text><text class="body copy" x="168" y="74">and interaction design.</text><path class="rule" d="M28 87H732"/><rect x="28" y="100" width="30" height="30" rx="5" fill="#34d399" fill-opacity="0.12" stroke="#34d399" stroke-opacity="0.55"/><text class="index" x="43" y="120" text-anchor="middle" fill="#34d399">02</text><text class="label" x="76" y="120">BACKEND</text><text class="body copy" x="168" y="113">Developing Django platforms with authentication, role-based</text><text class="body copy" x="168" y="130">workflows, APIs, and AI-assisted functionality.</text><path class="rule" d="M28 143H732"/><rect x="28" y="156" width="30" height="30" rx="5" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-opacity="0.55"/><text class="index" x="43" y="176" text-anchor="middle" fill="#f59e0b">03</text><text class="label" x="76" y="176">MOBILE</text><text class="body copy" x="168" y="169">Building Flutter applications around structured architecture,</text><text class="body copy" x="168" y="186">API integration, and practical user workflows.</text>
+</svg>

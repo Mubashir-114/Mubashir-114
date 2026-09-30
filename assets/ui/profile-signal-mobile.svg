@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="190" viewBox="0 0 360 190" role="img" aria-labelledby="title desc">
+  <title id="title">Current development signal</title>
+  <desc id="desc">Web, platform, and mobile capabilities currently in focus.</desc>
+  <style>
+    
+    .surface { fill: #0d1117; }
+    .surface2 { fill: #111820; }
+    .border { fill: none; stroke: #30363d; }
+    .rule { stroke: #30363d; }
+    .title { fill: #f0f6fc; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .body { fill: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .muted { fill: #8b949e; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .tile { fill: #f6f8fa; stroke: #30363d; }
+    @media (prefers-color-scheme: light) {
+      .surface { fill: #ffffff; }
+      .surface2 { fill: #f6f8fa; }
+      .border, .rule { stroke: #d0d7de; }
+      .title { fill: #1f2328; }
+      .body { fill: #24292f; }
+      .muted { fill: #59636e; }
+      .tile { fill: #ffffff; stroke: #d0d7de; }
+    }
+    @media (prefers-reduced-motion: reduce) { animate { display: none; } }
+
+    .kicker { fill: #5eead4; font: 700 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .label { fill: #8b949e; font: 700 9px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .copy { font-size: 10.5px; }
+    .active { fill: #34d399; font: 700 9px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    @media (prefers-color-scheme: light) { .label { fill: #59636e; } }
+  </style>
+  <rect class="surface" x="1" y="1" width="358" height="188" rx="7"/>
+  <rect class="border" x="1" y="1" width="358" height="188" rx="7"/>
+  <rect x="1" y="1" width="5" height="188" rx="2" fill="#5eead4"/>
+  <text class="kicker" x="18" y="26">CURRENT SIGNAL</text>
+  <circle cx="298" cy="22" r="3.5" fill="#34d399"><animate attributeName="opacity" values="1;0.35;1" dur="2.6s" repeatCount="indefinite"/></circle>
+  <text class="active" x="342" y="26" text-anchor="end">ACTIVE</text>
+  <path class="rule" d="M18 36H342"/>
+  <text class="label" x="18" y="61">WEB</text><text class="body copy" x="88" y="55">React interfaces connected to REST APIs</text><text class="body copy" x="88" y="69">and Django systems</text><path class="rule" d="M18 86H342"/><text class="label" x="18" y="107">PLATFORM</text><text class="body copy" x="88" y="101">Authentication, RBAC, databases,</text><text class="body copy" x="88" y="115">realtime, and business workflows</text><path class="rule" d="M18 132H342"/><text class="label" x="18" y="153">MOBILE</text><text class="body copy" x="88" y="147">Flutter applications with structured</text><text class="body copy" x="88" y="161">state and API integration</text>
+</svg>

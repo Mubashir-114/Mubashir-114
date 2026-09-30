@@ -3,9 +3,9 @@
   <desc id="desc">React product interface unifying conversations, projects, documents, knowledge, search, and workspace analytics. View the repository on GitHub.</desc>
   <defs>
     <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#f1e05a"/>
-      <stop offset="0.72" stop-color="#38bdf8"/>
-      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="0.72" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
     </linearGradient>
     <filter id="softGlow" x="-100%" y="-300%" width="300%" height="700%"><feGaussianBlur stdDeviation="4"/></filter>
     <clipPath id="topEdge"><rect width="360" height="5" rx="2"/></clipPath>
@@ -14,16 +14,16 @@
     .surface { fill: #0d1117; }
     .border { fill: none; stroke: #30363d; }
     .titleText { fill: #f0f6fc; font: 700 22px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
-    .body { fill: #c9d1d9; font: 13px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .body { fill: #c9d1d9; font: 12.5px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
     .muted { fill: #8b949e; font: 8.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     .stack { fill: #c9d1d9; font: 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .accentText { fill: #f1e05a; }
+    .accentText { fill: #3b82f6; }
     .chip { fill: #111827; stroke: #30363d; }
     .chipText { fill: #aeb8c4; font: 700 7.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .repo { fill: #38bdf8; font: 700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .repo { fill: #a855f7; font: 700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     @media (prefers-color-scheme: light) {
       .surface { fill: #ffffff; } .border { stroke: #d0d7de; } .titleText { fill: #1f2328; }
-      .body, .stack { fill: #24292f; } .muted { fill: #59636e; } .accentText { fill: #806900; }
+      .body, .stack { fill: #24292f; } .muted { fill: #59636e; } .accentText { fill: #1d4ed8; }
       .chip { fill: #f6f8fa; stroke: #d0d7de; } .chipText { fill: #424a53; } .repo { fill: #0550ae; }
     }
     @media (prefers-reduced-motion: reduce) { animate { display: none; } }
@@ -31,15 +31,16 @@
   <rect class="surface" x="1" y="1" width="358" height="276" rx="8"/>
   <rect class="border" x="1" y="1" width="358" height="276" rx="8"/>
   <rect x="1" y="1" width="358" height="4" rx="2" fill="url(#accentLine)"/>
-  <rect x="-80" y="1" width="70" height="4" fill="#38bdf8" opacity="0.75" filter="url(#softGlow)" clip-path="url(#topEdge)">
+  <rect x="-80" y="1" width="70" height="4" fill="#a855f7" opacity="0.75" filter="url(#softGlow)" clip-path="url(#topEdge)">
     <animate attributeName="x" values="-80;370" dur="5.5s" repeatCount="indefinite"/>
   </rect>
-  <rect x="1" y="1" width="5" height="276" rx="2" fill="#f1e05a"/>
+  <rect x="1" y="1" width="5" height="276" rx="2" fill="#3b82f6"/>
   <text class="muted accentText" x="20" y="29" font-weight="700">04 / PROJECT</text>
-  <circle cx="216" cy="25" r="4" fill="#f1e05a"><animate attributeName="opacity" values="1;0.45;1" dur="2.8s" repeatCount="indefinite"/></circle>
+  <circle cx="216" cy="25" r="4" fill="#3b82f6"><animate attributeName="opacity" values="1;0.45;1" dur="2.8s" repeatCount="indefinite"/></circle>
   <text class="muted" x="340" y="29" text-anchor="end">GITHUB PRIMARY: JavaScript</text>
-  <text class="titleText" x="20" y="65">NEXO</text>
-  <text class="body" x="20" y="99">React product interface unifying conversations, projects,</text><text class="body" x="20" y="121">documents, knowledge, search, and workspace analytics.</text>
+  <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJub25lIj4KICA8ZGVmcz4KICAgIDwhLS0gTGVmdCBQaWxsYXIgTG93ZXIgR3JhZGllbnQ6IGRlZXAgcm95YWwgLyBjb2JhbHQgYmx1ZSAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibmV4by1sZWZ0LXBpbGxhciIgeDE9IjgiIHkxPSIzMiIgeDI9IjMyIiB5Mj0iOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNDBhZiIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIzNSUiIHN0b3AtY29sb3I9IiMxZDRlZDgiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzI1NjNlYiIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPCEtLSBGb2xkIENyZWFzZSBTaGFkb3c6IHNpbXVsYXRlcyBkZXB0aCB1bmRlciB0aGUgZGlhZ29uYWwgcmliYm9uIGZvbGQgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Im5leG8tZm9sZC1zaGFkb3ciIHgxPSIxMiIgeTE9IjI4IiB4Mj0iMjgiIHkyPSI2MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGIxMzJiIiBzdG9wLW9wYWNpdHk9IjAuNTUiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjMGIxMzJiIiBzdG9wLW9wYWNpdHk9IjAuMTUiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBiMTMyYiIgc3RvcC1vcGFjaXR5PSIwIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KCiAgICA8IS0tIENvbnRpbnVvdXMgRm9yZWdyb3VuZCBSaWJib24gR3JhZGllbnQ6IHZpYnJhbnQgY3lhbiB0byBlbGVjdHJpYyBibHVlIHRvIGluZGlnby92aW9sZXQgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Im5leG8tcmliYm9uIiB4MT0iMTAiIHkxPSI4IiB4Mj0iNjgiIHkyPSI5MiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMzhiZGY4IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iIzNiODJmNiIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI2NSUiIHN0b3AtY29sb3I9IiM2MzY2ZjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzdjM2FlZCIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPCEtLSBSaWdodCBQaWxsYXIgR3JhZGllbnQ6IHNvZnQgdmlvbGV0IC8gb3JjaGlkIGRvd24gdG8gcHVycGxlIGFuZCBkZWVwIGluZGlnbyAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibmV4by1yaWdodC1waWxsYXIiIHgxPSI4MCIgeTE9IjgiIHgyPSI4MCIgeTI9IjkyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNjMDg0ZmMiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMzAlIiBzdG9wLWNvbG9yPSIjYTg1NWY3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1jb2xvcj0iIzhiNWNmNiIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjM2NmYxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KCiAgICA8IS0tIFNlYW0gU2hhZG93OiBzdWJ0bGUgZGVwdGggd2hlcmUgdGhlIGRpYWdvbmFsIHR1Y2tzIHVuZGVyIHRoZSByaWdodCBwaWxsYXIgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Im5leG8tc2VhbS1zaGFkb3ciIHgxPSI2OCIgeTE9IjY4IiB4Mj0iNjAiIHkyPSI2OCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGIxMzJiIiBzdG9wLW9wYWNpdHk9IjAuMzgiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBiMTMyYiIgc3RvcC1vcGFjaXR5PSIwIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CgogIDwhLS0gMS4gTG93ZXIgTGVmdCBQaWxsYXIgKFVuZGVyIHRoZSByaWJib24gZm9sZCkgLS0+CiAgPHBhdGgKICAgIGQ9Ik0gOCwzMiBMIDMyLDU2IEwgMzIsODYgQSA2LDYgMCAwLDEgMjYsOTIgTCAyNCw5MiBMIDgsNzYgQSA2LDYgMCAwLDEgOCw3MCBaIgogICAgZmlsbD0idXJsKCNuZXhvLWxlZnQtcGlsbGFyKSIKICAvPgoKICA8IS0tIDIuIENhc3Qgc2hhZG93IHVuZGVyIHRoZSBmb2xkIG9uIHRoZSBsZWZ0IHBpbGxhciAtLT4KICA8cGF0aAogICAgZD0iTSA4LDMyIEwgMzIsNTYgTCAzMiw2OCBMIDgsNDQgWiIKICAgIGZpbGw9InVybCgjbmV4by1mb2xkLXNoYWRvdykiCiAgLz4KCiAgPCEtLSAzLiBDb250aW51b3VzIEZvcmVncm91bmQgUmliYm9uIChUb3AtbGVmdCBwaWxsYXIgaGVhZCArIGRpYWdvbmFsIGNyb3NzYmFyKSAtLT4KICA8cGF0aAogICAgZD0iTSAxNCw4IEwgMzIsOCBMIDY4LDQ0IEwgNjgsOTIgTCAzMiw1NiBMIDgsMzIgTCA4LDE0IEEgNiw2IDAgMCwxIDE0LDggWiIKICAgIGZpbGw9InVybCgjbmV4by1yaWJib24pIgogIC8+CgogIDwhLS0gNC4gU3VidGxlIHNoYWRvdyBhbG9uZyByaWdodCBzZWFtIG9mIGRpYWdvbmFsIC0tPgogIDxwYXRoCiAgICBkPSJNIDYwLDQ0IEwgNjgsNDQgTCA2OCw5MiBMIDYwLDkyIFoiCiAgICBmaWxsPSJ1cmwoI25leG8tc2VhbS1zaGFkb3cpIgogIC8+CgogIDwhLS0gNS4gUmlnaHQgUGlsbGFyIC0tPgogIDxwYXRoCiAgICBkPSJNIDY4LDggTCA4NiwyNiBBIDYsNiAwIDAsMSA5MiwzMCBMIDkyLDg2IEEgNiw2IDAgMCwxIDg2LDkyIEwgNjgsOTIgWiIKICAgIGZpbGw9InVybCgjbmV4by1yaWdodC1waWxsYXIpIgogIC8+Cjwvc3ZnPgo=" x="20" y="45" width="22" height="22" preserveAspectRatio="xMidYMid meet"/>
+  <text class="titleText" x="52" y="65">NEXO</text>
+  <text class="body" x="20" y="96">React product interface unifying conversations,</text><text class="body" x="20" y="114">projects, documents, knowledge, search, and</text><text class="body" x="20" y="132">workspace analytics.</text>
   <text class="muted" x="20" y="148">STACK</text>
   <text class="stack" x="20" y="168">React / Vite / Zustand</text><text class="stack" x="20" y="186">Framer Motion / CSS</text>
   <rect class="chip" x="14" y="207" width="84" height="27" rx="5"/><text class="chipText" x="56.0" y="225" text-anchor="middle">WORKSPACE UI</text><rect class="chip" x="104" y="207" width="91" height="27" rx="5"/><text class="chipText" x="149.7" y="225" text-anchor="middle">COMMAND SEARCH</text><rect class="chip" x="201" y="207" width="112" height="27" rx="5"/><text class="chipText" x="257.3" y="225" text-anchor="middle">STATE ARCHITECTURE</text>
