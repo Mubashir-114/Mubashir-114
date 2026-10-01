@@ -30,17 +30,18 @@ assets/ui/*.svg
 assets/toolkit/icons/*.svg
   Local Devicon v2.17.0 technology icons. See the adjacent SOURCES.md.
 
-contrib-heatmap.svg
+assets/activity/activity.svg
   Generated activity visualization. Do not hand-edit it.
+
+assets/cta/*.svg
+  Compact hero call-to-action cards used immediately under the header.
 
 data/contributions.json
   Public contribution data used by the renderer. Do not hand-edit it.
 
-scripts/fetch_contributions.py
-  Fetches public contribution data directly from GitHub.
-
-scripts/render_heatmap_svg.py
-  Renders data/contributions.json into contrib-heatmap.svg.
+scripts/generate_activity.py
+  Fetches GitHub GraphQL contribution calendar data and renders
+  assets/activity/activity.svg plus data/contributions.json.
 
 scripts/render_project_cards.py
   Generates the four project-card SVGs. Edit project content in this script,
@@ -49,22 +50,18 @@ scripts/render_project_cards.py
 scripts/render_profile_ui.py
   Generates the section rails plus the profile, focus, and toolkit panels.
 
-.github/workflows/update-profile-art.yml
+.github/workflows/update-activity.yml
   Refreshes the contribution data and SVG once a day and can also be run
   manually from GitHub Actions.
 
 LOCAL REFRESH
 -------------
 
-Install the lightweight workflow dependencies:
-
-  python -m pip install -r scripts/requirements.txt
-
-Refresh and render:
+Refresh activity through GitHub Actions, or locally with a token:
 
   $env:GH_PROFILE_USER = "Mubashir-114"
-  python scripts/fetch_contributions.py
-  python scripts/render_heatmap_svg.py
+  $env:GITHUB_TOKEN = "<token with public GraphQL access>"
+  python scripts/generate_activity.py
   python scripts/render_project_cards.py
   python scripts/render_profile_ui.py
 

@@ -2,11 +2,10 @@
   <img src="./assets/header.svg" width="100%" alt="Mubashir - full-stack developer building production-oriented web, mobile, and AI-assisted applications" />
 </div>
 
-<p align="center">
-  <a href="https://github.com/Mubashir-114?tab=repositories"><strong>Explore my work</strong></a>
-  &nbsp;&middot;&nbsp;
-  <a href="mailto:mklmubashir575@gmail.com"><strong>Start a conversation</strong></a>
-</p>
+<div align="center">
+  <a href="#selected-work"><img src="./assets/cta/explore-work.svg" width="372" alt="Explore my work - selected builds, systems and products" /></a>
+  <a href="https://www.linkedin.com/in/mubashir-kc-b630b73a4"><img src="./assets/cta/chat-with-me.svg" width="372" alt="Chat with me - open to thoughtful collaboration" /></a>
+</div>
 
 ## <img src="./assets/ui/section-01.svg" width="100%" alt="01 / PROFILE - System identity" />
 
@@ -23,6 +22,8 @@ I am **Mubasheer KC**, a full-stack developer focused on production-oriented web
   <source media="(max-width: 600px)" srcset="./assets/ui/now-mobile.svg" />
   <img src="./assets/ui/now.svg" width="100%" alt="Current focus: product-oriented React interfaces, Django platforms, and structured Flutter applications" />
 </picture>
+
+<a id="selected-work"></a>
 
 ## <img src="./assets/ui/section-03.svg" width="100%" alt="03 / SELECTED WORK - Featured builds" />
 
@@ -73,7 +74,7 @@ I am **Mubasheer KC**, a full-stack developer focused on production-oriented web
 
 <div align="center">
   <a href="https://github.com/Mubashir-114?tab=overview">
-    <img src="./contrib-heatmap.svg" width="100%" alt="Mubashir's GitHub contribution activity for the last year" />
+    <img src="./assets/activity/activity.svg" width="100%" alt="Mubashir's GitHub contribution activity for the last year" />
   </a>
 </div>
 

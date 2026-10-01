@@ -1,0 +1,56 @@
+name: Update profile activity
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron runs in UTC. 02:17 UTC is 07:47 in Asia/Kolkata.
+    - cron: "17 2 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/update-activity.yml"
+      - "scripts/generate_activity.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-profile-activity
+  cancel-in-progress: true
+
+jobs:
+  refresh-activity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_PROFILE_USER: Mubashir-114
+      PROFILE_TIMEZONE: Asia/Kolkata
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate activity visualization
+        run: python scripts/generate_activity.py
+
+      - name: Validate generated SVG
+        run: python -c "import xml.etree.ElementTree as ET; ET.parse('assets/activity/activity.svg')"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/activity/activity.svg data/contributions.json
+          if git diff --cached --quiet; then
+            echo "No activity changes to commit."
+          else
+            git commit -m "chore(profile): refresh activity visualization"
+            git push
+          fi
