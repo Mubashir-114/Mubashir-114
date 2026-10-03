@@ -3,14 +3,8 @@ name: Update profile activity
 on:
   workflow_dispatch:
   schedule:
-    # GitHub cron runs in UTC. 02:17 UTC is 07:47 in Asia/Kolkata.
-    - cron: "17 2 * * *"
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/update-activity.yml"
-      - "scripts/generate_activity.py"
+    - cron: '0 0 * * *'
+      timezone: 'Asia/Kolkata'
 
 permissions:
   contents: write
@@ -35,7 +29,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
       - name: Generate activity visualization
         run: python scripts/generate_activity.py

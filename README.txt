@@ -50,7 +50,7 @@ scripts/render_project_cards.py
 scripts/render_profile_ui.py
   Generates the section rails plus the profile, focus, and toolkit panels.
 
-.github/workflows/update-activity.yml
+.github/workflows/update-profile-activity.yml
   Refreshes the contribution data and SVG once a day and can also be run
   manually from GitHub Actions.
 

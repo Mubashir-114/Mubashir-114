@@ -72,6 +72,14 @@ def iso_z(value: dt.datetime) -> str:
     return value.astimezone(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def local_window() -> tuple[dt.datetime, dt.datetime]:
+    tz = ZoneInfo(PROFILE_TIMEZONE)
+    now_local = dt.datetime.now(tz)
+    end_dt = now_local
+    start_dt = now_local - dt.timedelta(days=365)
+    return start_dt, end_dt
+
+
 def graphql_request(from_dt: dt.datetime, to_dt: dt.datetime) -> dict:
     if not TOKEN:
         raise ActivityError("GITHUB_TOKEN or GH_TOKEN is required for GitHub GraphQL contribution data")
@@ -406,8 +414,7 @@ def write_outputs(data: dict, svg: str) -> None:
 
 
 def main() -> int:
-    to_dt = dt.datetime.now(dt.timezone.utc)
-    from_dt = to_dt - dt.timedelta(days=365)
+    from_dt, to_dt = local_window()
     response = graphql_request(from_dt, to_dt)
     days = flatten_days(response)
     latest_local_date = dt.datetime.now(ZoneInfo(PROFILE_TIMEZONE)).date()
