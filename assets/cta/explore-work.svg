@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="86" viewBox="0 0 400 86" role="img" aria-labelledby="title desc">
-<title id="title">Explore selected work</title><desc id="desc">Four projects across web and mobile</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="84" viewBox="0 0 430 84" role="img" aria-labelledby="title desc">
+<title id="title">Explore My Work ↗</title><desc id="desc">Projects, systems &amp; products I&#x27;ve built.</desc>
 <style>
   .surface { fill: #0a0a0a; }
   .border { fill: none; stroke: #343434; }
@@ -10,14 +10,14 @@
   .accent { fill: #8edce6; }
   .mono { fill: #a8a6a1; font-family: Consolas, "Liberation Mono", monospace; }
 </style>
-<rect class="surface" x="0.5" y="0.5" width="399" height="85" rx="12"/>
-<rect class="border" x="0.5" y="0.5" width="399" height="85" rx="12"/>
+<rect class="surface" x="0.5" y="0.5" width="429" height="83" rx="12"/>
+<rect class="border" x="0.5" y="0.5" width="429" height="83" rx="12"/>
 <defs>
-<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101626"/><stop offset="1" stop-color="#0a0d14"/></linearGradient>
-<radialGradient id="bloom"><stop stop-color="#8db8ff" stop-opacity=".13"/><stop offset="1" stop-color="#8db8ff" stop-opacity="0"/></radialGradient>
-<linearGradient id="edge"><stop stop-color="#8db8ff"/><stop offset=".62" stop-color="#b5a1ff"/><stop offset="1" stop-color="#b5a1ff" stop-opacity="0"/></linearGradient>
-</defs><style>.surface { fill: url(#panel); } .border { stroke: #8db8ff; stroke-opacity: .26; } .accent { fill: #8db8ff; } .label { fill: #8db8ff; font-weight: 600; letter-spacing: .7px; }</style>
-<ellipse cx="352.0" cy="15.5" rx="176.0" ry="86.0" fill="url(#bloom)"/>
-<path d="M16 1H384" stroke="url(#edge)" stroke-width="2"/>
-<text x="22" y="35" class="title" font-size="22" >Explore selected work</text><text x="22" y="60" class="muted" font-size="14" >Four projects across web and mobile</text><text x="366" y="48" class="accent" font-size="24" text-anchor="end">↗</text>
+<linearGradient id="nav-panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111929"/><stop offset="1" stop-color="#0a0d15"/></linearGradient>
+<radialGradient id="nav-bloom"><stop stop-color="#8bb9ff" stop-opacity=".12"/><stop offset="1" stop-color="#8bb9ff" stop-opacity="0"/></radialGradient>
+<linearGradient id="nav-edge"><stop stop-color="#8bb9ff"/><stop offset=".7" stop-color="#b49bf7"/><stop offset="1" stop-color="#b49bf7" stop-opacity="0"/></linearGradient>
+</defs><style>.surface { fill: url(#nav-panel); } .border { stroke: #8bb9ff; stroke-opacity: .28; } .accent { fill: #8bb9ff; } .label { fill: #8bb9ff; }</style>
+<ellipse cx="365.5" cy="12.6" rx="150.5" ry="84.0" fill="url(#nav-bloom)"/>
+<path d="M14 1H416" stroke="url(#nav-edge)" stroke-width="1.6"/>
+<rect x="22" y="26.0" width="32" height="32" rx="8" fill="#8bb9ff" fill-opacity=".08" stroke="#8bb9ff" stroke-opacity=".25"/><g transform="translate(28 29.0) scale(0.5)" fill="none" stroke="#8bb9ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="28" height="23" rx="4"/><path d="M10 3h27v23M9 17h15M9 24h10"/></g><text x="68" y="37" class="title" font-size="19" font-weight="600">Explore My Work ↗</text><text x="68" y="60" class="muted" font-size="13" >Projects, systems &amp; products I&#x27;ve built.</text><text x="408" y="47" class="accent" font-size="22" text-anchor="end">↗</text>
 </svg>
