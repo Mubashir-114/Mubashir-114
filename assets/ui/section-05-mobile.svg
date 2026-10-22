@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="62" viewBox="0 0 360 62" role="img" aria-labelledby="title desc">
+<title id="title">Contribution activity</title><desc id="desc">05 / Contribution activity</desc>
+<style>
+  .surface { fill: #0a0a0a; }
+  .border { fill: none; stroke: #343434; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .body { fill: #d4d4d4; }
+  .title { fill: #fcfaf5; font-family: Georgia, "Times New Roman", serif; }
+  .muted { fill: #a8a6a1; }
+  .accent { fill: #8edce6; }
+  .mono { fill: #a8a6a1; font-family: Consolas, "Liberation Mono", monospace; }
+</style>
+<rect class="surface" x="0.5" y="0.5" width="359" height="61" rx="12"/>
+<rect class="border" x="0.5" y="0.5" width="359" height="61" rx="12"/>
+<style>.surface { fill: #111a2b; } .border { stroke: #61759b; stroke-opacity: .25; }</style><rect x="1" y="15" width="32" height="32" rx="9" fill="#b29bf7" fill-opacity=".11"/><text x="17" y="36" class="accent" font-size="12" text-anchor="middle">05</text><text x="46" y="39" class="title" font-size="24" >Contribution activity</text>
+</svg>

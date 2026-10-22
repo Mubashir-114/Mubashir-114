@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="48" viewBox="0 0 760 48" role="img" aria-labelledby="title desc">
-<title id="title">Technical toolkit</title><desc id="desc">Section 4: Technical toolkit</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="72" viewBox="0 0 960 72" role="img" aria-labelledby="title desc">
+<title id="title">Technology toolkit</title><desc id="desc">04 / Technology toolkit</desc>
 <style>
   .surface { fill: #0a0a0a; }
   .border { fill: none; stroke: #343434; }
@@ -10,7 +10,7 @@
   .accent { fill: #8edce6; }
   .mono { fill: #a8a6a1; font-family: Consolas, "Liberation Mono", monospace; }
 </style>
-<rect class="surface" x="0.5" y="0.5" width="759" height="47" rx="12"/>
-<rect class="border" x="0.5" y="0.5" width="759" height="47" rx="12"/>
-<text x="20" y="32" class="title" font-size="24" >04  /  Technical toolkit</text>
+<rect class="surface" x="0.5" y="0.5" width="959" height="71" rx="12"/>
+<rect class="border" x="0.5" y="0.5" width="959" height="71" rx="12"/>
+<style>.surface { fill: #111a2b; } .border { stroke: #61759b; stroke-opacity: .25; }</style><rect x="1" y="15" width="32" height="32" rx="9" fill="#8bb9ff" fill-opacity=".11"/><text x="17" y="36" class="accent" font-size="12" text-anchor="middle">04</text><text x="46" y="39" class="title" font-size="31" >Technology toolkit</text><text x="902" y="40" class="mono" font-size="11" text-anchor="end" letter-spacing=".8">FROM INTERFACE TO INFRASTRUCTURE</text><g transform="translate(919 21) scale(0.7)" fill="none" stroke="#8bb9ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 9-9 11 9 11m16-22 9 11-9 11M23 5l-6 30"/></g>
 </svg>

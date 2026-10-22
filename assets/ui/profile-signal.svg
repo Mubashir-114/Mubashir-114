@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="112" viewBox="0 0 760 112" role="img" aria-labelledby="title desc">
-<title id="title">Across the stack</title><desc id="desc">Web interfaces, backend services and Flutter experiences.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="158" viewBox="0 0 960 158" role="img" aria-labelledby="title desc">
+<title id="title">How I approach the work</title><desc id="desc">Interfaces: clarity in every interaction. Services: structure behind the scenes. Mobile: care across platforms.</desc>
 <style>
   .surface { fill: #0a0a0a; }
   .border { fill: none; stroke: #343434; }
@@ -10,7 +10,14 @@
   .accent { fill: #8edce6; }
   .mono { fill: #a8a6a1; font-family: Consolas, "Liberation Mono", monospace; }
 </style>
-<rect class="surface" x="0.5" y="0.5" width="759" height="111" rx="12"/>
-<rect class="border" x="0.5" y="0.5" width="759" height="111" rx="12"/>
-<text x="22" y="32" class="title" font-size="23" >Across the stack</text><text x="22" y="64" class="body" font-size="14" >Web interfaces, backend services and Flutter experiences.</text>
+<rect class="surface" x="0.5" y="0.5" width="959" height="157" rx="12"/>
+<rect class="border" x="0.5" y="0.5" width="959" height="157" rx="12"/>
+<defs>
+<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101626"/><stop offset="1" stop-color="#0a0d14"/></linearGradient>
+<radialGradient id="bloom"><stop stop-color="#8db8ff" stop-opacity=".13"/><stop offset="1" stop-color="#8db8ff" stop-opacity="0"/></radialGradient>
+<linearGradient id="edge"><stop stop-color="#8db8ff"/><stop offset=".62" stop-color="#b5a1ff"/><stop offset="1" stop-color="#b5a1ff" stop-opacity="0"/></linearGradient>
+</defs><style>.surface { fill: url(#panel); } .border { stroke: #8db8ff; stroke-opacity: .26; } .accent { fill: #8db8ff; } .label { fill: #8db8ff; font-weight: 600; letter-spacing: .7px; }</style>
+<ellipse cx="844.8" cy="28.4" rx="422.4" ry="158.0" fill="url(#bloom)"/>
+<path d="M16 1H944" stroke="url(#edge)" stroke-width="2"/>
+<g transform="translate(28 27) scale(0.95)" fill="none" stroke="#8bb9ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="38" height="26" rx="4"/><path d="M14 38h12m-6-7v7M8 13h15m-15 7h23"/></g><text x="84" y="50" class="title" font-size="25" >Interfaces</text><text x="28" y="111" class="body" font-size="16" >Clarity in every interaction.</text><path d="M314 28v100" stroke="#6c7e9b" stroke-opacity=".2"/><g transform="translate(344 27) scale(0.95)" fill="none" stroke="#b49bf7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="34" height="14" rx="4"/><rect x="3" y="24" width="34" height="14" rx="4"/><path d="M10 9h12m-12 22h12M20 16v8"/></g><text x="400" y="50" class="title" font-size="25" >Services</text><text x="344" y="111" class="body" font-size="16" >Structure behind the scenes.</text><path d="M630 28v100" stroke="#6c7e9b" stroke-opacity=".2"/><g transform="translate(660 27) scale(0.95)" fill="none" stroke="#77d8c0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="1" width="22" height="38" rx="5"/><path d="M16 7h10m-7 26h4"/></g><text x="716" y="50" class="title" font-size="25" >Mobile</text><text x="660" y="111" class="body" font-size="16" >Care across platforms.</text>
 </svg>

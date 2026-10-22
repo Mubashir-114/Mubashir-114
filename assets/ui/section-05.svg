@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="48" viewBox="0 0 760 48" role="img" aria-labelledby="title desc">
-<title id="title">Contribution activity</title><desc id="desc">Section 5: Contribution activity</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="72" viewBox="0 0 960 72" role="img" aria-labelledby="title desc">
+<title id="title">Contribution activity</title><desc id="desc">05 / Contribution activity</desc>
 <style>
   .surface { fill: #0a0a0a; }
   .border { fill: none; stroke: #343434; }
@@ -10,7 +10,7 @@
   .accent { fill: #8edce6; }
   .mono { fill: #a8a6a1; font-family: Consolas, "Liberation Mono", monospace; }
 </style>
-<rect class="surface" x="0.5" y="0.5" width="759" height="47" rx="12"/>
-<rect class="border" x="0.5" y="0.5" width="759" height="47" rx="12"/>
-<text x="20" y="32" class="title" font-size="24" >05  /  Contribution activity</text>
+<rect class="surface" x="0.5" y="0.5" width="959" height="71" rx="12"/>
+<rect class="border" x="0.5" y="0.5" width="959" height="71" rx="12"/>
+<style>.surface { fill: #111a2b; } .border { stroke: #61759b; stroke-opacity: .25; }</style><rect x="1" y="15" width="32" height="32" rx="9" fill="#b29bf7" fill-opacity=".11"/><text x="17" y="36" class="accent" font-size="12" text-anchor="middle">05</text><text x="46" y="39" class="title" font-size="31" >Contribution activity</text><text x="902" y="40" class="mono" font-size="11" text-anchor="end" letter-spacing=".8">A CONTINUING PRACTICE</text><g transform="translate(919 21) scale(0.7)" fill="none" stroke="#b29bf7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 32h36M6 27V17m9 10V6m10 21V12m10 15V2"/></g>
 </svg>
