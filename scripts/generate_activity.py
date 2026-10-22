@@ -2,8 +2,8 @@
 """Generate the profile activity SVG from GitHub GraphQL contribution data."""
 from __future__ import annotations
 
+import argparse
 import datetime as dt
-import html
 import json
 import os
 import sys
@@ -21,26 +21,12 @@ DATA_PATH = os.path.join(HERE, "..", "data", "contributions.json")
 SVG_PATH = os.path.join(HERE, "..", "assets", "activity", "activity.svg")
 API_URL = "https://api.github.com/graphql"
 
-PALETTE = ["#161b22", "#164e63", "#0891b2", "#2563eb", "#7c3aed", "#c084fc"]
+PALETTE = ["#202020", "#29444a", "#3c6570", "#608c9c", "#9daed5", "#c4b5e8"]
 CELL = 12
 GAP = 3
 STEP = CELL + GAP
 PAD = 22
 LEFT_LABEL_W = 30
-TOP_LABEL_H = 20
-TITLEBAR_H = 30
-
-BG = "#0d1117"
-BG2 = "#111827"
-FRAME = "#30363d"
-MUTED = "#7d8590"
-ACCENT = "#5eead4"
-PRIMARY = "#60a5fa"
-HIGHLIGHT = "#c084fc"
-
-COL_T = 0.018
-ROW_T = 0.045
-CELL_DUR = 0.42
 
 
 QUERY = """
@@ -268,137 +254,62 @@ def build_grid(days: list[dict]) -> list[list[tuple[str, int, int] | None]]:
 
 
 def render_svg(data: dict) -> str:
-    days = data["days"]
-    latest_date = data["range"]["end"]
-    grid = build_grid(days)
-    column_count = len(grid)
-    art_w = column_count * STEP
-    art_h = 7 * STEP
-    canvas_w = PAD + LEFT_LABEL_W + art_w + PAD
-    stats_h = 88
-    canvas_h = TITLEBAR_H + TOP_LABEL_H + art_h + stats_h + PAD
-
-    month_labels = []
-    seen_months: set[tuple[int, int]] = set()
+    """Static calendar: visible without animation support, legible on either theme."""
+    from profile_svg import svg, text
+    grid = build_grid(data["days"])
+    width = PAD * 2 + LEFT_LABEL_W + len(grid) * STEP
+    grid_top = 80
+    left = PAD + LEFT_LABEL_W
+    body = text(PAD, 37, "A year of building", 30, "title")
+    months = set()
     for column_index, column in enumerate(grid):
         for cell in column:
             if cell is None:
                 continue
             date = dt.date.fromisoformat(cell[0])
             key = (date.year, date.month)
-            if key not in seen_months and date.day <= 7:
-                seen_months.add(key)
-                month_labels.append((column_index, date.strftime("%b")))
+            if key not in months and date.day <= 7:
+                months.add(key)
+                body += text(left + column_index*STEP, 67, date.strftime("%b"), 16, "muted")
             break
-
-    css = f"""
-@keyframes cell {{
-  0%   {{ opacity: 0; transform: translateY(-6px); }}
-  100% {{ opacity: 1; transform: translateY(0); }}
-}}
-.c {{ opacity: 0; animation: cell {CELL_DUR:.2f}s cubic-bezier(.2,.8,.2,1) both; }}
-@media (prefers-reduced-motion: reduce) {{
-  .c {{ opacity: 1; animation: none; }}
-}}
-""".strip()
-
-    parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{canvas_w}" height="{canvas_h}" '
-        f'viewBox="0 0 {canvas_w} {canvas_h}" role="img" aria-labelledby="title desc" '
-        f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">',
-        f'<title id="title">{html.escape(data["username"])} GitHub contribution activity</title>',
-        '<desc id="desc">A one-year contribution grid with total, streak, and active-day statistics.</desc>',
-        f'<style>{css}</style>',
-        '<defs>',
-        f'<linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/></linearGradient>',
-        '</defs>',
-        f'<rect width="{canvas_w}" height="{canvas_h}" rx="12" fill="url(#hbg)"/>',
-        f'<rect x="0.5" y="0.5" width="{canvas_w - 1}" height="{canvas_h - 1}" rx="12" '
-        f'fill="none" stroke="{FRAME}" stroke-width="1" stroke-opacity="0.55"/>',
-        f'<line x1="0" y1="{TITLEBAR_H}" x2="{canvas_w}" y2="{TITLEBAR_H}" stroke="{FRAME}" stroke-opacity="0.35"/>',
-    ]
-
-    for index, dot_color in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
-        parts.append(f'<circle cx="{PAD + index * 16}" cy="{TITLEBAR_H / 2}" r="5" fill="{dot_color}"/>')
-
-    parts.append(
-        f'<text x="{canvas_w / 2}" y="{TITLEBAR_H / 2 + 4}" fill="{MUTED}" font-size="12" '
-        f'text-anchor="middle">{html.escape(data["username"])}@github: ~/activity --year</text>'
-    )
-
-    grid_top = TITLEBAR_H + TOP_LABEL_H
-    grid_left = PAD + LEFT_LABEL_W
-
-    for column_index, label in month_labels:
-        x = grid_left + column_index * STEP
-        parts.append(f'<text x="{x}" y="{TITLEBAR_H + 14}" fill="{MUTED}" font-size="10">{label}</text>')
-
-    for weekday_index, weekday_name in [(1, "Mon"), (3, "Wed"), (5, "Fri")]:
-        y = grid_top + weekday_index * STEP + CELL * 0.78
-        parts.append(f'<text x="{PAD}" y="{y:.1f}" fill="{MUTED}" font-size="9">{weekday_name}</text>')
-
-    for column_index, column in enumerate(grid):
-        gx = grid_left + column_index * STEP
         for row_index, cell in enumerate(column):
             if cell is None:
                 continue
             date_s, count, level = cell
-            gy = grid_top + row_index * STEP
-            delay = column_index * COL_T + row_index * ROW_T
-            plural = "s" if count != 1 else ""
-            latest_marker = f' stroke="{HIGHLIGHT}" stroke-width="1.5"' if date_s == latest_date else ""
-            parts.append(
-                f'<rect class="c" x="{gx}" y="{gy}" width="{CELL}" height="{CELL}" rx="2.5" '
-                f'fill="{PALETTE[level]}"{latest_marker} style="animation-delay:{delay:.3f}s">'
-                f'<title>{date_s}: {count} contribution{plural}</title></rect>'
-            )
-
-    legend_y = grid_top + art_h + 6
-    legend_x = canvas_w - PAD - (len(PALETTE) * (CELL - 1) + 70)
-    parts.append(
-        f'<text x="{legend_x}" y="{legend_y + CELL * 0.8:.1f}" fill="{MUTED}" '
-        f'font-size="10" text-anchor="end">Less</text>'
-    )
-    lx = legend_x + 8
-    for color in PALETTE:
-        parts.append(f'<rect x="{lx}" y="{legend_y}" width="{CELL - 1}" height="{CELL - 1}" rx="2.2" fill="{color}"/>')
-        lx += CELL
-    parts.append(f'<text x="{lx + 4}" y="{legend_y + CELL * 0.8:.1f}" fill="{MUTED}" font-size="10">More</text>')
-
-    separator_y = legend_y + CELL + 14
-    parts.append(f'<line x1="0" y1="{separator_y}" x2="{canvas_w}" y2="{separator_y}" stroke="{FRAME}" stroke-opacity="0.25"/>')
-
-    current_streak = data["current_streak"]["length"]
-    longest_streak = data["longest_streak"]["length"]
-    total = data["total_contributions"]
-    active_days = data["active_days"]
-    date_range = data["range"]
-    ly = separator_y + 24
-
-    parts.append(
-        f'<text x="{PAD}" y="{ly}" font-size="13" fill="{ACCENT}">'
-        f'<tspan font-weight="700">{total:,}</tspan>'
-        f'<tspan fill="{MUTED}"> contributions in the last year</tspan></text>'
-    )
-    parts.append(
-        f'<text x="{canvas_w - PAD}" y="{ly}" font-size="12" fill="{MUTED}" text-anchor="end">'
-        f'{date_range["start"]} &#8594; {date_range["end"]}</text>'
-    )
-    ly += 24
-    parts.append(
-        f'<text x="{PAD}" y="{ly}" font-size="13" fill="{MUTED}">current streak '
-        f'<tspan fill="{ACCENT}" font-weight="700">{current_streak} days</tspan>'
-        f'<tspan fill="{MUTED}">   &#183;   longest </tspan>'
-        f'<tspan fill="{PRIMARY}" font-weight="700">{longest_streak} days</tspan></text>'
-    )
-    parts.append(
-        f'<text x="{canvas_w - PAD}" y="{ly}" font-size="12" fill="{MUTED}" text-anchor="end">'
-        f'<tspan fill="{HIGHLIGHT}" font-weight="700">{active_days}</tspan> active days</text>'
-    )
-
-    parts.append("</svg>")
-    return "".join(parts)
+            body += (f'<rect x="{left+column_index*STEP}" y="{grid_top+row_index*STEP}" '
+                     f'width="{CELL}" height="{CELL}" rx="2" fill="{PALETTE[level]}">'
+                     f'<title>{date_s}: {count} contributions</title></rect>')
+    for row, label in [(1, "M"), (3, "W"), (5, "F")]:
+        body += text(PAD, grid_top+row*STEP+11, label, 14, "muted")
+    body += text(PAD, 221, f'{data["total_contributions"]:,} contributions · {data["active_days"]} active days', 28)
+    body += text(PAD, 254, f'{data["range"]["start"]} — {data["range"]["end"]}', 21, "muted")
+    # Six swatches maintain a continuous less-to-more visual scale.
+    for index, color in enumerate(PALETTE):
+        body += f'<rect x="{width-PAD-172+index*16}" y="242" width="12" height="12" rx="2" fill="{color}"/>'
+    body += text(width-PAD-182, 254, "LESS", 12, "muted", text_anchor="end")
+    body += text(width-PAD, 254, "MORE", 12, "muted", text_anchor="end")
+    # The same daily output carries both layouts, keeping workflow staging intact.
+    # CSS inside an SVG image sees its rendered viewport width. On narrow screens,
+    # replace tiny calendar labels with six real monthly totals and larger type.
+    recent = data["monthly"][-6:]
+    compact = text(PAD, 40, f'{data["total_contributions"]:,} contributions · {data["active_days"]} active days', 34)
+    compact += text(PAD, 77, f'LAST SIX MONTHS / THROUGH {data["range"]["end"]}', 24, "muted")
+    peak = max((month["total"] for month in recent), default=0) or 1
+    step = (width-2*PAD)/6
+    for index, month in enumerate(recent):
+        center = PAD + step*(index+.5)
+        height = month["total"]/peak*100
+        compact += f'<rect x="{center-35:.2f}" y="{214-height:.2f}" width="70" height="{max(height,2):.2f}" rx="4" fill="#608c9c"/>'
+        compact += text(f"{center:.2f}", f"{203-height:.2f}", month["total"], 26, "body", text_anchor="middle")
+        label = dt.date.fromisoformat(month["month"]+"-01").strftime("%b")
+        compact += text(f"{center:.2f}", 254, label, 28, "muted", text_anchor="middle")
+    body = ('<style>.recent { display: none; } @media (max-width: 600px) { .year { display: none; } .recent { display: inline; } }</style>'
+            + '<g class="year">' + body + '</g><g class="recent">' + compact + '</g>')
+    desc = (f'{data["username"]}: {data["total_contributions"]} contributions over '
+            f'{data["active_days"]} active days, {data["range"]["start"]} to {data["range"]["end"]}. '
+            'Desktop shows a one-year calendar; mobile shows the last six monthly totals. '
+            'Calendar intensity increases from dark gray to pale violet.')
+    return svg(width, 278, "GitHub contribution activity", desc, body)
 
 
 def write_outputs(data: dict, svg: str) -> None:
@@ -409,11 +320,23 @@ def write_outputs(data: dict, svg: str) -> None:
         json.dump(data, data_file, indent=2)
         data_file.write("\n")
     with open(SVG_PATH, "w", encoding="utf-8", newline="\n") as svg_file:
-        svg_file.write(svg)
-        svg_file.write("\n")
+        svg_file.write(svg.rstrip("\n") + "\n")
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--from-cache", action="store_true", help="Rebuild the SVG from committed data without a token or network")
+    args = parser.parse_args()
+    if args.from_cache:
+        with open(DATA_PATH, encoding="utf-8") as cached_file:
+            data = json.load(cached_file)
+        # Preserve the data file and its generation timestamp exactly.
+        svg = render_svg(data)
+        ET.fromstring(svg)
+        with open(SVG_PATH, "w", encoding="utf-8", newline="\n") as output:
+            output.write(svg)
+        print(f"wrote {SVG_PATH} from cached data ending {data['range']['end']}")
+        return 0
     from_dt, to_dt = local_window()
     response = graphql_request(from_dt, to_dt)
     days = flatten_days(response)
