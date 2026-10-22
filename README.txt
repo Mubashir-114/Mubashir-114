@@ -1,48 +1,57 @@
-MKL / MUBASHEER KC — PROFILE MAINTENANCE
-======================================
+MUBASHEER KC — GITHUB PROFILE V3
+================================
 
-README.md is the public profile. It links to the deployed portfolio and four
-verified repositories. Keep essential project scope in native Markdown as well
-as SVG alternative text. Audit evidence and limitations: docs/profile-audit.md.
+README.md presents the developer profile and four projects with source links,
+their portfolio case studies, LinkedIn and the professional email address.
+Current review: docs/profile-v3-review.md. The earlier profile-audit.md is a
+historical record of V2, not the current visual specification.
 
 SOURCE OF TRUTH
 ---------------
-scripts/profile_svg.py             Shared palette, typography and SVG helpers.
-scripts/render_profile_ui.py       Header (desktop/mobile), footer, CTAs and UI.
-scripts/render_project_cards.py    Four projects, canonical repository names,
-                                  scope labels and desktop/mobile cards.
-scripts/generate_activity.py       GitHub GraphQL fetch, statistics and calendar.
-assets/brand/mkl-monogram.svg      Official portfolio mark; see SOURCES.md.
-assets/projects/logos/            Preserved project-owned artwork.
-assets/toolkit/icons/             Preserved local Devicon assets and attribution.
+scripts/profile_svg.py             Shared SVG helpers and self-contained assets.
+scripts/render_profile_ui.py       Editorial header/footer, section illustrations,
+                                  CTAs, profile/focus panels and grouped toolkit.
+scripts/render_project_cards.py    Project-owned logos, accents, descriptions,
+                                  stacks, features and mobile/desktop cards.
+scripts/generate_activity.py       Existing GitHub fetch/statistics/calendar.
+assets/projects/logos/SOURCES.md   Attribution for actual project artwork.
+assets/toolkit/SOURCES.md          Pinned official technology-icon attribution.
 
-Generated SVGs must be changed through their Python source, then regenerated.
-The optional profile, focus, section and secondary CTA assets remain available;
-the public README omits duplicate panels. All visible artwork is static, with
-explicit obsidian backgrounds and ivory text for GitHub theme independence.
-External fonts, JavaScript, foreignObject and remote image badges are unnecessary.
+Edit generator source, then regenerate. Do not patch generated SVGs by hand.
+The header's data-flow motion runs once for four seconds; reduced-motion mode
+disables it. The default static state is complete. No monogram or portrait is
+used. Opaque tinted surfaces preserve contrast across GitHub light/dark themes.
 
 LOCAL REBUILD (Python 3.12+; standard library only)
 ------------------------------------------------
   python scripts/render_profile_ui.py
   python scripts/render_project_cards.py
-  python scripts/generate_activity.py --from-cache
   python scripts/validate_profile.py
   git diff --check
 
---from-cache reads data/contributions.json and preserves its timestamp and
-contents. It never contacts GitHub. It does not refresh the contribution data.
+LOCAL VISUAL REVIEW (optional local QA packages + Chrome)
+--------------------------------------------------------
+  python scripts/preview_profile.py --compare
 
-DAILY ACTIVITY
---------------
-.github/workflows/update-profile-activity.yml fetches contribution data daily.
-Its existing schedule, timezone, permissions, secret reference and commit steps
-are preserved. The default generator invocation still fetches fresh data.
-For a live local refresh, provide GITHUB_TOKEN or GH_TOKEN through the process
-environment using your credential manager; never place a token in tracked files,
-command history, example commands or screenshots. Do not print the environment.
-Windows may need the standard tzdata package for live ZoneInfo date handling;
-the existing Linux workflow has the IANA timezone database.
+The local preview command uses Markdown, PyYAML and Playwright from your Python
+environment or the ignored .profile-validation-deps directory. These packages
+are not dependencies of the generators or daily workflow. preview_v3*.html/png
+and preview_reference*.html/png are ignored local artifacts.
+
+DAILY ACTIVITY — PRESERVED
+---------------------------
+The existing .github/workflows/update-profile-activity.yml, its schedule,
+permissions and authentication are unchanged. The contribution generator,
+committed data and responsive SVG are unchanged by V3. No manual workflow run
+is required for this design review.
+
+To rebuild the existing calendar from its committed data without network/token:
+  python scripts/generate_activity.py --from-cache
+
+The default invocation still fetches fresh GitHub data. If a live local refresh
+is needed, supply GITHUB_TOKEN or GH_TOKEN through the process environment using
+your credential manager. Never put credentials in tracked files, example
+commands, shell history, screenshots or console output.
 
 REVIEW / PUBLISH
 ----------------
@@ -51,5 +60,5 @@ REVIEW / PUBLISH
   git diff --stat
   git diff
 
-Review the desktop/mobile previews and the diff before approving publication.
-No commit or push is part of this modernization. Do not force-push.
+No staging, commit or push is part of V3. Review the actual desktop/mobile
+previews and wait for owner approval before publishing. Do not rewrite history.

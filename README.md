@@ -1,21 +1,29 @@
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/header-mobile.svg" />
-  <img src="./assets/header.svg" width="100%" alt="MKL — Mubasheer KC. Thoughtful interfaces. Connected experiences. Full-Stack Developer and Flutter Engineer, Kannur, Kerala, India." />
+  <img src="./assets/header.svg" width="100%" alt="Mubasheer KC. Thoughtful interfaces. Connected experiences. Full-Stack Developer and Flutter Engineer, Kannur, Kerala, India." />
 </picture>
 
 <p align="center">
-  <a href="https://mubashir-portfolio-orpin.vercel.app"><img src="./assets/cta/visit-portfolio.svg" width="332" alt="Visit portfolio — explore my case studies and approach" /></a>
+  <a href="https://mubashir-portfolio-orpin.vercel.app"><img src="./assets/cta/visit-portfolio.svg" width="400" alt="Visit My Portfolio ↗ — case studies, craft and the thinking behind it" /></a>
 </p>
 
 <p align="center">
-  <a href="https://mubashir-portfolio-orpin.vercel.app"><strong>Visit portfolio ↗</strong></a> &nbsp;·&nbsp;
   <a href="#selected-work">Selected work</a> &nbsp;·&nbsp;
   <a href="mailto:mklmubashir575@gmail.com">Get in touch</a>
 </p>
 
+<a id="about"></a>
+<h2><picture><source media="(max-width: 600px)" srcset="./assets/ui/section-01-mobile.svg" /><img src="./assets/ui/section-01.svg" width="100%" alt="01 / About" /></picture></h2>
+
 I'm **Mubasheer KC**, a full-stack developer and Flutter engineer based in Kannur, Kerala, India. I build web applications, mobile experiences and the backend services that connect them. I care about clear interfaces, well-structured application logic and useful details.
 
-## Selected work
+<picture>
+  <source media="(max-width: 600px)" srcset="./assets/ui/profile-signal-mobile.svg" />
+  <img src="./assets/ui/profile-signal.svg" width="100%" alt="My approach: clarity in interfaces, structure in services and care across mobile platforms" />
+</picture>
+
+<a id="selected-work"></a>
+<h2><picture><source media="(max-width: 600px)" srcset="./assets/ui/section-02-mobile.svg" /><img src="./assets/ui/section-02.svg" width="100%" alt="02 / Selected work" /></picture></h2>
 
 Four projects across personal finance, developer education, service discovery and productivity. Each repository documents its own setup and scope.
 
@@ -28,7 +36,7 @@ Four projects across personal finance, developer education, service discovery an
 
 **Implemented:** accounts, transactions, budgets, reports, SMS review and the deterministic FIN companion. **Active development;** live currency conversion is planned.
 
-[App repository](https://github.com/Mubashir-114/fintrack_app) · [Backend](https://github.com/Mubashir-114/fintrack_backend) · [Case study](https://mubashir-portfolio-orpin.vercel.app/work/fintrack-2)
+**[Explore case study ↗](https://mubashir-portfolio-orpin.vercel.app/work/fintrack-2)** · [App repository](https://github.com/Mubashir-114/fintrack_app) · [Backend](https://github.com/Mubashir-114/fintrack_backend)
 
 <a href="https://github.com/Mubashir-114/kodehax_academy">
   <picture>
@@ -39,7 +47,7 @@ Four projects across personal finance, developer education, service discovery an
 
 **Implemented:** student and teacher workflows, classrooms, coding challenges, assessments and Groq-assisted tutoring. AI features require a configured Groq service; further analytics and mobile coverage remain on the roadmap.
 
-[Repository](https://github.com/Mubashir-114/kodehax_academy) · [Case study](https://mubashir-portfolio-orpin.vercel.app/work/kodehax-academy)
+**[Explore case study ↗](https://mubashir-portfolio-orpin.vercel.app/work/kodehax-academy)** · [Repository](https://github.com/Mubashir-114/kodehax_academy)
 
 <a href="https://github.com/Mubashir-114/Provia">
   <picture>
@@ -50,7 +58,7 @@ Four projects across personal finance, developer education, service discovery an
 
 **Implemented:** service discovery, booking workflows and customer-provider WebSocket chat. **Active development; checkout simulates payments** and does not demonstrate live payment processing.
 
-[Repository](https://github.com/Mubashir-114/Provia) · [Case study](https://mubashir-portfolio-orpin.vercel.app/work/provia)
+**[Explore case study ↗](https://mubashir-portfolio-orpin.vercel.app/work/provia)** · [Repository](https://github.com/Mubashir-114/Provia)
 
 <a href="https://github.com/Mubashir-114/Nexo-frontend">
   <picture>
@@ -61,23 +69,26 @@ Four projects across personal finance, developer education, service discovery an
 
 **Frontend demonstration:** conversations, documents, projects and workspace search using domain-specific Zustand stores. AI responses and retrieval are mocked; no live model is connected.
 
-[Repository](https://github.com/Mubashir-114/Nexo-frontend) · [Case study](https://mubashir-portfolio-orpin.vercel.app/work/nexo)
+**[Explore case study ↗](https://mubashir-portfolio-orpin.vercel.app/work/nexo)** · [Repository](https://github.com/Mubashir-114/Nexo-frontend)
 
-## Current focus & toolkit
+<a id="current-focus"></a>
+<h2><picture><source media="(max-width: 600px)" srcset="./assets/ui/section-03-mobile.svg" /><img src="./assets/ui/section-03.svg" width="100%" alt="03 / Current focus" /></picture></h2>
 
-Refining FinTrack 2.0 and its connected finance workflows. Across projects, I'm focused on thoughtful React interfaces, Django platforms and structured Flutter applications.
+<picture>
+  <source media="(max-width: 600px)" srcset="./assets/ui/now-mobile.svg" />
+  <img src="./assets/ui/now.svg" width="100%" alt="Refining FinTrack 2.0 and connected finance workflows. Also focused on React interfaces, Django platforms and structured Flutter applications." />
+</picture>
+
+<a id="technology-toolkit"></a>
+<h2><picture><source media="(max-width: 600px)" srcset="./assets/ui/section-04-mobile.svg" /><img src="./assets/ui/section-04.svg" width="100%" alt="04 / Technology toolkit" /></picture></h2>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/ui/toolkit-mobile.svg" />
-  <img src="./assets/ui/toolkit.svg" width="100%" alt="Core toolkit: Flutter, Dart, Python, Django, React, Node.js, MySQL and Git" />
+  <img src="./assets/ui/toolkit.svg" width="100%" alt="Languages: Python, JavaScript, TypeScript, Dart. Frontend: React, Next.js, Tailwind CSS. Backend: Django, Node.js, Express. Mobile: Flutter and Provider. Databases: MySQL. Systems: REST APIs, WebSockets, authentication and role-based access. Workflow: Git, GitHub and GitHub Actions." />
 </picture>
 
-- **Web:** React, Next.js, TypeScript, JavaScript, HTML, CSS and Tailwind CSS.
-- **Backend & data:** Python, Django, Node.js, Express, MySQL and REST APIs.
-- **Mobile & systems:** Flutter, Dart, Provider, authentication, role-based workflows and WebSockets.
-- **AI & workflow:** Groq integration, deterministic assistants, Git and GitHub Actions.
-
-## Contribution activity
+<a id="contribution-activity"></a>
+<h2><picture><source media="(max-width: 600px)" srcset="./assets/ui/section-05-mobile.svg" /><img src="./assets/ui/section-05.svg" width="100%" alt="05 / Contribution activity" /></picture></h2>
 
 <a href="https://github.com/Mubashir-114?tab=overview">
   <img src="./assets/activity/activity.svg" width="100%" alt="GitHub contribution activity: desktop shows the past year; mobile shows the last six monthly totals. Includes yearly contributions and active days. Open GitHub for accessible history." />
@@ -85,7 +96,8 @@ Refining FinTrack 2.0 and its connected finance workflows. Across projects, I'm 
 
 <sub>Generated daily from the GitHub contribution calendar available to the workflow token. The displayed date range identifies the snapshot. [View contribution history](https://github.com/Mubashir-114?tab=overview) · [Refresh workflow](https://github.com/Mubashir-114/Mubashir-114/actions/workflows/update-profile-activity.yml)</sub>
 
-## Let's build something useful
+<a id="contact"></a>
+<h2><picture><source media="(max-width: 600px)" srcset="./assets/ui/section-06-mobile.svg" /><img src="./assets/ui/section-06.svg" width="100%" alt="06 / Let's connect" /></picture></h2>
 
 Have a concrete problem or an idea worth building? I'm interested in thoughtful web products, Flutter applications and connected backend systems.
 
@@ -93,5 +105,5 @@ Have a concrete problem or an idea worth building? I'm interested in thoughtful 
 
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/footer-mobile.svg" />
-  <img src="./assets/footer.svg" width="100%" alt="MKL — Built with care. Always improving." />
+  <img src="./assets/footer.svg" width="100%" alt="Mubasheer KC — Built with care. Always improving." />
 </picture>

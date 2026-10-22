@@ -1,3 +1,5 @@
+> Historical V2 report. The current V3 design and verification are documented in [profile-v3-review.md](profile-v3-review.md).
+
 # MKL GitHub profile modernization
 
 Reviewed and implemented locally on 22 October 2026 (Asia/Kolkata).

@@ -2,7 +2,7 @@
 """Validate self-hosted references, SVG safety, data, and reproducible assets.
 
 Uses only the standard library. Live link and browser checks are documented in
-docs/profile-audit.md; they are separate from this deterministic offline check.
+docs/profile-v3-review.md; they are separate from this deterministic offline check.
 """
 from html.parser import HTMLParser
 from pathlib import Path
@@ -58,6 +58,19 @@ def main():
             assert url[1:] in refs.ids, f"Missing anchor: {url}"
         assert "budgetbee-app" not in url and "expense-manager-api" not in url, f"Use canonical link: {url}"
     assert "img.shields.io" not in readme, "Keep profile assets self-hosted"
+    assert "MKL" not in readme, "Remove visible monogram branding"
+    assert "Visit My Portfolio" in readme and "https://mubashir-portfolio-orpin.vercel.app" in readme
+    for path in [*ROOT.glob("assets/*.svg"), *ROOT.glob("assets/cta/*.svg"),
+                 *ROOT.glob("assets/ui/*.svg"), *ROOT.glob("assets/projects/*.svg")]:
+        source = path.read_text(encoding="utf-8")
+        # Embedded PNG base64 may coincidentally contain these letters. Check
+        # actual SVG copy rather than the encoded artwork payload.
+        visible_copy = " ".join(node.text or "" for node in ET.fromstring(source).iter()
+                                if node.tag.rsplit("}", 1)[-1] in {"text", "tspan", "title", "desc"})
+        assert not re.search(r"\bMKL\b", visible_copy), f"Visible monogram branding remains: {path}"
+        if "@keyframes" in source:
+            assert "prefers-reduced-motion: reduce" in source and "animation: none" in source
+            assert "infinite" not in source, f"Use brief finite motion: {path}"
     for path in ROOT.glob("assets/**/*.svg"):
         tree = ET.parse(path)
         root = tree.getroot()
