@@ -6,6 +6,7 @@ requirements-local.txt
 
 # Local preview HTMLs & scratch files
 preview_*.html
+preview_*.png
 scratch_*
 avi-ascii-static.svg
 info-card.svg

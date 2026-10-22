@@ -1,85 +1,55 @@
-MUBASHIR-114 PROFILE MAINTENANCE
-================================
+MKL / MUBASHEER KC — PROFILE MAINTENANCE
+======================================
 
-This repository powers https://github.com/Mubashir-114.
+README.md is the public profile. It links to the deployed portfolio and four
+verified repositories. Keep essential project scope in native Markdown as well
+as SVG alternative text. Audit evidence and limitations: docs/profile-audit.md.
 
-PROFILE STRUCTURE
------------------
+SOURCE OF TRUTH
+---------------
+scripts/profile_svg.py             Shared palette, typography and SVG helpers.
+scripts/render_profile_ui.py       Header (desktop/mobile), footer, CTAs and UI.
+scripts/render_project_cards.py    Four projects, canonical repository names,
+                                  scope labels and desktop/mobile cards.
+scripts/generate_activity.py       GitHub GraphQL fetch, statistics and calendar.
+assets/brand/mkl-monogram.svg      Official portfolio mark; see SOURCES.md.
+assets/projects/logos/            Preserved project-owned artwork.
+assets/toolkit/icons/             Preserved local Devicon assets and attribution.
 
-README.md
-  The public profile content. Keep claims grounded in public work and keep the
-  selected-project list short.
+Generated SVGs must be changed through their Python source, then regenerated.
+The optional profile, focus, section and secondary CTA assets remain available;
+the public README omits duplicate panels. All visible artwork is static, with
+explicit obsidian backgrounds and ivory text for GitHub theme independence.
+External fonts, JavaScript, foreignObject and remote image badges are unnecessary.
 
-assets/header.svg
-  Responsive hero artwork. Uses SVG/CSS animation only and includes a reduced
-  motion fallback.
-
-assets/footer.svg
-  Small closing visual used at the end of the profile.
-
-assets/projects/*.svg
-  Generated, responsive project cards with project-owned logos and accents.
-
-assets/projects/logos/*
-  Optimized local copies of logo artwork sourced from each featured repository.
-  See assets/projects/logos/SOURCES.md for exact paths.
-
-assets/ui/*.svg
-  Generated section rails and responsive profile, focus, and toolkit panels.
-
-assets/toolkit/icons/*.svg
-  Local Devicon v2.17.0 technology icons. See the adjacent SOURCES.md.
-
-assets/activity/activity.svg
-  Generated activity visualization. Do not hand-edit it.
-
-assets/cta/*.svg
-  Compact hero call-to-action cards used immediately under the header.
-
-data/contributions.json
-  Public contribution data used by the renderer. Do not hand-edit it.
-
-scripts/generate_activity.py
-  Fetches GitHub GraphQL contribution calendar data and renders
-  assets/activity/activity.svg plus data/contributions.json.
-
-scripts/render_project_cards.py
-  Generates the four project-card SVGs. Edit project content in this script,
-  then rerun it rather than hand-editing the generated card files.
-
-scripts/render_profile_ui.py
-  Generates the section rails plus the profile, focus, and toolkit panels.
-
-.github/workflows/update-profile-activity.yml
-  Refreshes the contribution data and SVG once a day and can also be run
-  manually from GitHub Actions.
-
-LOCAL REFRESH
--------------
-
-Refresh activity through GitHub Actions, or locally with a token:
-
-  $env:GH_PROFILE_USER = "Mubashir-114"
-  $env:GITHUB_TOKEN = "<token with public GraphQL access>"
-  python scripts/generate_activity.py
-  python scripts/render_project_cards.py
+LOCAL REBUILD (Python 3.12+; standard library only)
+------------------------------------------------
   python scripts/render_profile_ui.py
+  python scripts/render_project_cards.py
+  python scripts/generate_activity.py --from-cache
+  python scripts/validate_profile.py
+  git diff --check
 
-PUBLISHING
-----------
+--from-cache reads data/contributions.json and preserves its timestamp and
+contents. It never contacts GitHub. It does not refresh the contribution data.
 
-Review changes before publishing:
+DAILY ACTIVITY
+--------------
+.github/workflows/update-profile-activity.yml fetches contribution data daily.
+Its existing schedule, timezone, permissions, secret reference and commit steps
+are preserved. The default generator invocation still fetches fresh data.
+For a live local refresh, provide GITHUB_TOKEN or GH_TOKEN through the process
+environment using your credential manager; never place a token in tracked files,
+command history, example commands or screenshots. Do not print the environment.
+Windows may need the standard tzdata package for live ZoneInfo date handling;
+the existing Linux workflow has the IANA timezone database.
 
+REVIEW / PUBLISH
+----------------
   git status --short
   git diff --check
+  git diff --stat
   git diff
 
-Then commit and push normally. Do not force-push this profile repository.
-
-GITHUB ACTIONS
---------------
-
-The workflow declares contents: write, which is required to commit refreshed
-activity data. In repository settings, Actions workflow permissions must allow
-read and write access. The workflow can then be triggered manually once from
-the Actions tab; the daily schedule handles later updates.
+Review the desktop/mobile previews and the diff before approving publication.
+No commit or push is part of this modernization. Do not force-push.
