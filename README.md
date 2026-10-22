@@ -4,28 +4,12 @@
 </picture>
 
 <p align="center">
-  <a href="https://mubashir-portfolio-orpin.vercel.app">
-    <picture>
-      <source media="(max-width: 600px)" srcset="./assets/cta/visit-portfolio-mobile.svg" />
-      <img src="./assets/cta/visit-portfolio.svg" width="580" alt="Visit My Portfolio ↗ — Explore projects, case studies &amp; the thinking behind them." />
-    </picture>
-  </a>
+  <a href="https://mubashir-portfolio-orpin.vercel.app"><img src="./assets/cta/visit-portfolio.svg" width="760" alt="Visit My Portfolio ↗ — Explore projects, case studies &amp; the thinking behind them." /></a>
 </p>
 
 <p align="center">
-  <a href="#selected-work">
-    <picture>
-      <source media="(max-width: 600px)" srcset="./assets/cta/explore-work-mobile.svg" />
-      <img src="./assets/cta/explore-work.svg" width="430" alt="Explore My Work ↗ — Projects, systems &amp; products I've built." />
-    </picture>
-  </a>
-  &nbsp;
-  <a href="#contact">
-    <picture>
-      <source media="(max-width: 600px)" srcset="./assets/cta/chat-with-me-mobile.svg" />
-      <img src="./assets/cta/chat-with-me.svg" width="430" alt="Let's Connect ↗ — Have an idea? I'd love to hear it." />
-    </picture>
-  </a>
+  <a href="#selected-work"><img src="./assets/cta/explore-work.svg" width="376" alt="Explore My Work ↗ — Projects, systems &amp; products I've built." /></a>
+  <a href="#contact"><img src="./assets/cta/chat-with-me.svg" width="376" alt="Let's Connect ↗ — Have an idea? I'd love to hear it." /></a>
 </p>
 
 <a id="about"></a>
@@ -131,26 +115,9 @@ Four projects across personal finance, developer education, service discovery an
 Have a concrete problem or an idea worth building? I'm interested in thoughtful web products, Flutter applications and connected backend systems.
 
 <p align="center">
-  <a href="mailto:mklmubashir575@gmail.com">
-    <picture>
-      <source media="(max-width: 600px)" srcset="./assets/ui/contact-email-mobile.svg" />
-      <img src="./assets/ui/contact-email.svg" width="282" alt="Email Me ↗ — Direct professional contact." />
-    </picture>
-  </a>
-  &nbsp;
-  <a href="https://www.linkedin.com/in/mubashir-kc-b630b73a4">
-    <picture>
-      <source media="(max-width: 600px)" srcset="./assets/ui/contact-linkedin-mobile.svg" />
-      <img src="./assets/ui/contact-linkedin.svg" width="282" alt="LinkedIn ↗ — Connect professionally." />
-    </picture>
-  </a>
-  &nbsp;
-  <a href="https://mubashir-portfolio-orpin.vercel.app">
-    <picture>
-      <source media="(max-width: 600px)" srcset="./assets/ui/contact-portfolio-mobile.svg" />
-      <img src="./assets/ui/contact-portfolio.svg" width="282" alt="Visit Portfolio ↗ — Explore my work." />
-    </picture>
-  </a>
+  <a href="mailto:mklmubashir575@gmail.com"><img src="./assets/ui/contact-email.svg" width="248" alt="Email Me ↗ — Direct professional contact." /></a>
+  <a href="https://www.linkedin.com/in/mubashir-kc-b630b73a4"><img src="./assets/ui/contact-linkedin.svg" width="248" alt="LinkedIn ↗ — Connect professionally." /></a>
+  <a href="https://mubashir-portfolio-orpin.vercel.app"><img src="./assets/ui/contact-portfolio.svg" width="248" alt="Visit Portfolio ↗ — Explore my work." /></a>
 </p>
 
 <picture>

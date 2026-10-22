@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="430" height="84" viewBox="0 0 430 84" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="376" height="82" viewBox="0 0 376 82" role="img" aria-labelledby="title desc">
 <title id="title">Let&#x27;s Connect ↗</title><desc id="desc">Have an idea? I&#x27;d love to hear it.</desc>
 <style>
   .surface { fill: #0a0a0a; }
@@ -10,14 +10,14 @@
   .accent { fill: #8edce6; }
   .mono { fill: #a8a6a1; font-family: Consolas, "Liberation Mono", monospace; }
 </style>
-<rect class="surface" x="0.5" y="0.5" width="429" height="83" rx="12"/>
-<rect class="border" x="0.5" y="0.5" width="429" height="83" rx="12"/>
+<rect class="surface" x="0.5" y="0.5" width="375" height="81" rx="12"/>
+<rect class="border" x="0.5" y="0.5" width="375" height="81" rx="12"/>
 <defs>
 <linearGradient id="nav-panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111929"/><stop offset="1" stop-color="#0a0d15"/></linearGradient>
 <radialGradient id="nav-bloom"><stop stop-color="#b29bf7" stop-opacity=".12"/><stop offset="1" stop-color="#b29bf7" stop-opacity="0"/></radialGradient>
 <linearGradient id="nav-edge"><stop stop-color="#b29bf7"/><stop offset=".7" stop-color="#8bb9ff"/><stop offset="1" stop-color="#8bb9ff" stop-opacity="0"/></linearGradient>
 </defs><style>.surface { fill: url(#nav-panel); } .border { stroke: #b29bf7; stroke-opacity: .28; } .accent { fill: #b29bf7; } .label { fill: #b29bf7; }</style>
-<ellipse cx="365.5" cy="12.6" rx="150.5" ry="84.0" fill="url(#nav-bloom)"/>
-<path d="M14 1H416" stroke="url(#nav-edge)" stroke-width="1.6"/>
-<rect x="22" y="26.0" width="32" height="32" rx="8" fill="#b29bf7" fill-opacity=".08" stroke="#b29bf7" stroke-opacity=".25"/><g transform="translate(28 29.0) scale(0.5)" fill="none" stroke="#b29bf7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h34v24H3zM3 10l17 13 17-13"/></g><text x="68" y="37" class="title" font-size="19" font-weight="600">Let&#x27;s Connect ↗</text><text x="68" y="60" class="muted" font-size="13" >Have an idea? I&#x27;d love to hear it.</text><text x="408" y="47" class="accent" font-size="22" text-anchor="end">↗</text>
+<ellipse cx="319.6" cy="12.3" rx="131.6" ry="82.0" fill="url(#nav-bloom)"/>
+<path d="M14 1H362" stroke="url(#nav-edge)" stroke-width="1.6"/>
+<rect x="20" y="25.0" width="32" height="32" rx="8" fill="#b29bf7" fill-opacity=".08" stroke="#b29bf7" stroke-opacity=".25"/><g transform="translate(26 28.0) scale(0.5)" fill="none" stroke="#b29bf7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h34v24H3zM3 10l17 13 17-13"/></g><text x="64" y="36" class="title" font-size="17" font-weight="600">Let&#x27;s Connect ↗</text><text x="64" y="58" class="muted" font-size="12.5" >Have an idea? I&#x27;d love to hear it.</text><text x="356" y="46" class="accent" font-size="19" text-anchor="end">↗</text>
 </svg>

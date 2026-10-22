@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="96" viewBox="0 0 600 96" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="92" viewBox="0 0 760 92" role="img" aria-labelledby="title desc">
 <title id="title">Visit My Portfolio ↗</title><desc id="desc">Explore projects, case studies &amp; the thinking behind them.</desc>
 <style>
   .surface { fill: #0a0a0a; }
@@ -10,14 +10,14 @@
   .accent { fill: #8edce6; }
   .mono { fill: #a8a6a1; font-family: Consolas, "Liberation Mono", monospace; }
 </style>
-<rect class="surface" x="0.5" y="0.5" width="599" height="95" rx="12"/>
-<rect class="border" x="0.5" y="0.5" width="599" height="95" rx="12"/>
+<rect class="surface" x="0.5" y="0.5" width="759" height="91" rx="12"/>
+<rect class="border" x="0.5" y="0.5" width="759" height="91" rx="12"/>
 <defs>
 <linearGradient id="hero-panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#121b2d"/><stop offset="1" stop-color="#0a0d16"/></linearGradient>
 <radialGradient id="hero-bloom"><stop stop-color="#8bb9ff" stop-opacity=".16"/><stop offset="1" stop-color="#8bb9ff" stop-opacity="0"/></radialGradient>
 <linearGradient id="hero-edge"><stop stop-color="#8bb9ff"/><stop offset=".6" stop-color="#b49bf7"/><stop offset="1" stop-color="#b49bf7" stop-opacity="0"/></linearGradient>
 </defs><style>.surface { fill: url(#hero-panel); } .border { stroke: #8bb9ff; stroke-opacity: .30; } .accent { fill: #8bb9ff; } .label { fill: #8bb9ff; font-weight: 600; letter-spacing: .9px; }</style>
-<ellipse cx="528.0" cy="19.2" rx="240.0" ry="96.0" fill="url(#hero-bloom)"/>
-<path d="M16 1H584" stroke="url(#hero-edge)" stroke-width="2"/>
-<text x="28" y="40" class="title" font-size="22" font-weight="600">VISIT MY PORTFOLIO ↗</text><text x="28" y="68" class="muted" font-size="13.5" >Explore projects, case studies &amp; the thinking behind them.</text><circle cx="551" cy="48.0" r="21" fill="#162238" stroke="#8bb9ff" stroke-opacity=".38"/><text x="551" y="54.5" class="accent" font-size="19" text-anchor="middle">↗</text>
+<ellipse cx="668.8" cy="18.4" rx="304.0" ry="92.0" fill="url(#hero-bloom)"/>
+<path d="M16 1H744" stroke="url(#hero-edge)" stroke-width="2"/>
+<text x="28" y="39" class="title" font-size="21" font-weight="600">VISIT MY PORTFOLIO ↗</text><text x="28" y="67" class="muted" font-size="13.5" >Explore projects, case studies &amp; the thinking behind them.</text><circle cx="711" cy="46.0" r="21" fill="#162238" stroke="#8bb9ff" stroke-opacity=".38"/><text x="711" y="52.5" class="accent" font-size="19" text-anchor="middle">↗</text>
 </svg>

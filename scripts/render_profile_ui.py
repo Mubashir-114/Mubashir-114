@@ -91,7 +91,7 @@ def render_section(index, title, meta, kind, accent, mobile=False):
 
 def render_portfolio_hero(mobile=False):
     """Primary Portfolio CTA: Deep midnight navy surface with illuminated accents."""
-    w, h = (360, 92) if mobile else (600, 96)
+    w, h = (360, 92) if mobile else (760, 92)
     pad = 20 if mobile else 28
     accent = "#8bb9ff"
     secondary = "#b49bf7"
@@ -116,8 +116,8 @@ def render_portfolio_hero(mobile=False):
         body += f'<circle cx="{btn_x}" cy="{btn_y}" r="{btn_r}" fill="#162238" stroke="{accent}" stroke-opacity=".38"/>'
         body += text(btn_x, btn_y + 5.5, "↗", 16, "accent", text_anchor="middle")
     else:
-        body += text(pad, 40, title_text, 22, "title", font_weight="600")
-        body += text(pad, 68, subtitle_text, 13.5, "muted")
+        body += text(pad, 39, title_text, 21, "title", font_weight="600")
+        body += text(pad, 67, subtitle_text, 13.5, "muted")
         body += f'<circle cx="{btn_x}" cy="{btn_y}" r="{btn_r}" fill="#162238" stroke="{accent}" stroke-opacity=".38"/>'
         body += text(btn_x, btn_y + 6.5, "↗", 19, "accent", text_anchor="middle")
     return svg(w, h, "Visit My Portfolio ↗", subtitle_text, body)
@@ -125,8 +125,8 @@ def render_portfolio_hero(mobile=False):
 
 def render_nav_card(title, subtitle, kind, accent, secondary, mobile=False):
     """Secondary Navigation CTA cards: Explore My Work (#selected-work) & Let's Connect (#contact)."""
-    w, h = (360, 82) if mobile else (430, 84)
-    pad = 18 if mobile else 22
+    w, h = (360, 82) if mobile else (376, 82)
+    pad = 18 if mobile else 20
     body = f'''<defs>
 <linearGradient id="nav-panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111929"/><stop offset="1" stop-color="#0a0d15"/></linearGradient>
 <radialGradient id="nav-bloom"><stop stop-color="{accent}" stop-opacity=".12"/><stop offset="1" stop-color="{accent}" stop-opacity="0"/></radialGradient>
@@ -139,30 +139,30 @@ def render_nav_card(title, subtitle, kind, accent, secondary, mobile=False):
     icon_y = (h - icon_box) / 2
     body += f'<rect x="{pad}" y="{icon_y}" width="{icon_box}" height="{icon_box}" rx="8" fill="{accent}" fill-opacity=".08" stroke="{accent}" stroke-opacity=".25"/>'
     body += illustration(kind, pad + 6, icon_y + 3, accent, .5)
-    text_x = pad + icon_box + 14
-    body += text(text_x, 36 if mobile else 37, title, 17 if mobile else 19, "title", font_weight="600")
-    body += text(text_x, 58 if mobile else 60, subtitle, 12 if mobile else 13, "muted")
-    body += text(w - pad, 47, "↗", 20 if mobile else 22, "accent", text_anchor="end")
+    text_x = pad + icon_box + 12
+    body += text(text_x, 36, title, 17, "title", font_weight="600")
+    body += text(text_x, 58, subtitle, 12 if mobile else 12.5, "muted")
+    body += text(w - pad, 46, "↗", 19 if not mobile else 20, "accent", text_anchor="end")
     return svg(w, h, title, subtitle, body)
 
 
 def render_contact_card(title, subtitle, kind, accent, mobile=False):
     """Compact, coordinated contact cards for the bottom section."""
-    w, h = (360, 74) if mobile else (282, 76)
-    pad = 16 if mobile else 16
+    w, h = (360, 74) if mobile else (248, 74)
+    pad = 16 if mobile else 14
     body = f'''<defs>
 <linearGradient id="contact-panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#090d14"/></linearGradient>
 </defs><style>.surface {{ fill: url(#contact-panel); }} .border {{ stroke: {accent}; stroke-opacity: .26; }} .accent {{ fill: {accent}; }}</style>
 <path d="M12 1H{w-12}" stroke="{accent}" stroke-opacity=".4" stroke-width="1.5"/>
 '''
-    icon_box = 30
+    icon_box = 28
     icon_y = (h - icon_box) / 2
     body += f'<rect x="{pad}" y="{icon_y}" width="{icon_box}" height="{icon_box}" rx="7" fill="{accent}" fill-opacity=".09" stroke="{accent}" stroke-opacity=".22"/>'
-    body += illustration(kind, pad + 5, icon_y + 3, accent, .48)
-    text_x = pad + icon_box + 12
-    body += text(text_x, 34, title, 14.5 if not mobile else 15, "body", font_weight="600", style="fill: #fcfaf5")
-    body += text(text_x, 52, subtitle, 11.5 if not mobile else 12, "muted")
-    body += text(w - pad, 42, "↗", 16, "accent", text_anchor="end")
+    body += illustration(kind, pad + 4, icon_y + 2, accent, .45)
+    text_x = pad + icon_box + 10
+    body += text(text_x, 33, title, 14 if not mobile else 15, "body", font_weight="600", style="fill: #fcfaf5")
+    body += text(text_x, 51, subtitle, 11 if not mobile else 12, "muted")
+    body += text(w - pad, 41, "↗", 15 if not mobile else 16, "accent", text_anchor="end")
     return svg(w, h, title, subtitle, body)
 
 
@@ -204,73 +204,90 @@ def render_now(mobile=False):
     return premium(w, h, "Current focus", "Refining FinTrack 2.0 and connected finance workflows. Also focused on React interfaces, Django platforms and structured Flutter applications.", body, "#77d8c0", "#8bb9ff", "#101d24")
 
 
-def tool_item(label, icon, x, y, size=15, mobile=False):
-    """Unified technology item with standardized container, padding, and typography."""
-    if mobile:
-        box = 28
-        rx = 7
-        icon_dim = 18
-        icon_pad = 5
-        text_x = x + box + 9
-        label_size = size
-    else:
-        box = 32
-        rx = 8
-        icon_dim = 22
-        icon_pad = 5
-        text_x = x + box + 10
-        label_size = size
-
-    icon_path = f"assets/toolkit/icons/{icon}.svg"
-    return (
-        f'<rect x="{x}" y="{y-box+9}" width="{box}" height="{box}" rx="{rx}" fill="{TILE_BG}"/>'
-        f'<image href="{image_uri(icon_path)}" x="{x+icon_pad}" y="{y-box+9+icon_pad}" width="{icon_dim}" height="{icon_dim}" preserveAspectRatio="xMidYMid meet"/>'
-        + text(text_x, y, label, label_size, "body")
-    )
+def label_width(label):
+    custom = {
+        "Dart": 30,
+        "Git": 22,
+        "React": 38,
+        "MySQL": 46,
+        "Python": 48,
+        "Django": 48,
+        "Node.js": 50,
+        "GitHub": 50,
+        "Next.js": 50,
+        "Express": 54,
+        "Flutter": 44,
+        "Provider": 58,
+        "REST APIs": 70,
+        "JavaScript": 74,
+        "TypeScript": 76,
+        "WebSockets": 82,
+        "Tailwind CSS": 88,
+        "Authentication": 98,
+        "GitHub Actions": 104,
+        "Role-based access": 122,
+    }
+    return custom.get(label, int(len(label) * 7.5 + 4))
 
 
 def render_toolkit(mobile=False):
-    w, h = (360, 804) if mobile else (960, 530)
-    body = ''
-    y = 24
-    # Standard desktop 4-column positions for predictable visual rhythm
-    desktop_cols = [216, 396, 576, 756]
+    if mobile:
+        w, h = 360, 764
+        body = ''
+        y = 22
+        for index, (category, items) in enumerate(TOOLS):
+            color = ["#9fc7ff", "#b9a1ff", "#8ed5c5"][index % 3]
+            body += text(18, y + 14, category, 11.5, "mono", style=f"fill: {color}")
+            col_w = 154
+            item_y = y + 26
+            for idx, (label, icon) in enumerate(items):
+                col = idx % 2
+                row = idx // 2
+                ix = 18 + col * (col_w + 16)
+                iy = item_y + row * 40
+                icon_path = f"assets/toolkit/icons/{icon}.svg"
+                body += (
+                    f'<rect x="{ix}" y="{iy}" width="{col_w}" height="32" rx="7" fill="#131c2d" stroke="#61759b" stroke-opacity=".25"/>'
+                    f'<rect x="{ix+2}" y="{iy+2}" width="28" height="28" rx="6" fill="{TILE_BG}"/>'
+                    f'<image href="{image_uri(icon_path)}" x="{ix+6}" y="{iy+6}" width="20" height="20" preserveAspectRatio="xMidYMid meet"/>'
+                    + text(ix + 36, iy + 20, label, 11.5 if len(label) > 13 else 12.5, "body", font_weight="500")
+                )
+            rows_count = (len(items) + 1) // 2
+            block_h = 28 + rows_count * 40 + 8
+            if index < len(TOOLS) - 1:
+                body += f'<path d="M18 {y+block_h-4}H{w-18}" stroke="#8095b7" stroke-opacity=".14"/>'
+            y += block_h
+        desc = "Languages: Python, JavaScript, TypeScript, Dart. Frontend: React, Next.js, Tailwind CSS. Backend: Django, Node.js, Express. Mobile: Flutter, Provider. Databases: MySQL. Systems and APIs: REST APIs, WebSockets, authentication, role-based access. Workflow: Git, GitHub, GitHub Actions."
+        return premium(w, h, "Technology toolkit", desc, body, "#8bb9ff", "#b49bf7", "#111928")
+    else:
+        w, h = 960, 440
+        body = ''
+        y = 24
+        row_h = 56
+        body += f'<path d="M168 18v{h-36}" stroke="#8095b7" stroke-opacity=".18"/>'
 
-    for index, (category, items) in enumerate(TOOLS):
-        color = ["#9fc7ff", "#b9a1ff", "#8ed5c5"][index % 3]
-        if mobile:
-            body += text(20, y + 12, category, 12, "mono", style=f"fill: {color}")
-            if category == "LANGUAGES":
-                positions = [(20, y + 46), (180, y + 46), (20, y + 88), (180, y + 88)]
-                row_h = 120
-            elif category == "SYSTEMS + APIs":
-                positions = [(20, y + 46), (180, y + 46), (20, y + 88), (180, y + 88)]
-                row_h = 120
-            elif category in ("FRONTEND", "BACKEND", "WORKFLOW"):
-                positions = [(20, y + 46), (180, y + 46), (20, y + 88)]
-                row_h = 120
-            elif category == "MOBILE":
-                positions = [(20, y + 46), (180, y + 46)]
-                row_h = 82
-            else:  # DATABASES
-                positions = [(20, y + 46)]
-                row_h = 82
+        for index, (category, items) in enumerate(TOOLS):
+            color = ["#9fc7ff", "#b9a1ff", "#8ed5c5"][index % 3]
+            body += text(26, y + 23, category, 12, "mono", style=f"fill: {color}")
+            x_cursor = 188
+            for label, icon in items:
+                tw = label_width(label)
+                chip_w = 38 + tw + 14
+                icon_path = f"assets/toolkit/icons/{icon}.svg"
+                body += (
+                    f'<rect x="{x_cursor}" y="{y+4}" width="{chip_w}" height="32" rx="8" fill="#131c2d" stroke="#61759b" stroke-opacity=".25"/>'
+                    f'<rect x="{x_cursor+2}" y="{y+6}" width="28" height="28" rx="6" fill="{TILE_BG}"/>'
+                    f'<image href="{image_uri(icon_path)}" x="{x_cursor+6}" y="{y+10}" width="20" height="20" preserveAspectRatio="xMidYMid meet"/>'
+                    + text(x_cursor + 38, y + 24, label, 13.5, "body", font_weight="500")
+                )
+                x_cursor += chip_w + 12
 
-            for (label, icon), (ix, iy) in zip(items, positions):
-                body += tool_item(label, icon, ix, iy, 12.5 if len(label) > 13 else 13.5, mobile=True)
-        else:
-            row_h = 70
-            body += text(26, y + 27, category, 13, "mono", style=f"fill: {color}")
-            for tool_index, (label, icon) in enumerate(items):
-                col_x = desktop_cols[tool_index]
-                body += tool_item(label, icon, col_x, y + 27, 14 if len(label) > 15 else 15, mobile=False)
+            if index < len(TOOLS) - 1:
+                body += f'<path d="M20 {y+row_h-6}H{w-20}" stroke="#8095b7" stroke-opacity=".12"/>'
+            y += row_h
 
-        if index < len(TOOLS) - 1:
-            body += f'<path d="M20 {y+row_h-12}H{w-20}" stroke="#8095b7" stroke-opacity=".18"/>'
-        y += row_h
-
-    desc = "Languages: Python, JavaScript, TypeScript, Dart. Frontend: React, Next.js, Tailwind CSS. Backend: Django, Node.js, Express. Mobile: Flutter, Provider. Databases: MySQL. Systems and APIs: REST APIs, WebSockets, authentication, role-based access. Workflow: Git, GitHub, GitHub Actions."
-    return premium(w, h, "Technology toolkit", desc, body, "#8bb9ff", "#b49bf7", "#111928")
+        desc = "Languages: Python, JavaScript, TypeScript, Dart. Frontend: React, Next.js, Tailwind CSS. Backend: Django, Node.js, Express. Mobile: Flutter, Provider. Databases: MySQL. Systems and APIs: REST APIs, WebSockets, authentication, role-based access. Workflow: Git, GitHub, GitHub Actions."
+        return premium(w, h, "Technology toolkit", desc, body, "#8bb9ff", "#b49bf7", "#111928")
 
 
 def render_footer(mobile=False):
