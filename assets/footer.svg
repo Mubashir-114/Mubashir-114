@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="56" viewBox="0 0 760 56" role="img" aria-labelledby="title desc">
-<title id="title">MKL — Built with care</title><desc id="desc">Thoughtful interfaces. Connected experiences.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="82" viewBox="0 0 960 82" role="img" aria-labelledby="title desc">
+<title id="title">Mubasheer KC</title><desc id="desc">Built with care. Always improving.</desc>
 <style>
   .surface { fill: #0a0a0a; }
   .border { fill: none; stroke: #343434; }
@@ -10,7 +10,7 @@
   .accent { fill: #8edce6; }
   .mono { fill: #a8a6a1; font-family: Consolas, "Liberation Mono", monospace; }
 </style>
-<rect class="surface" x="0.5" y="0.5" width="759" height="55" rx="12"/>
-<rect class="border" x="0.5" y="0.5" width="759" height="55" rx="12"/>
-<text x="24" y="35" class="title" font-size="25" >MKL</text><text x="736" y="33" class="muted" font-size="14" text-anchor="end">Built with care. Always improving.</text>
+<rect class="surface" x="0.5" y="0.5" width="959" height="81" rx="12"/>
+<rect class="border" x="0.5" y="0.5" width="959" height="81" rx="12"/>
+<style>.surface { fill: #111a2b; } .border { stroke: none; }</style><path d="M0 1H960" stroke="#8bb9ff" stroke-opacity=".25"/><text x="4" y="38" class="title" font-size="26" >Mubasheer KC</text><text x="956" y="38" class="muted" font-size="15" text-anchor="end">Thoughtful interfaces. Connected experiences.</text>
 </svg>
