@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Render expressive project-owned cards with verified scope and source links.
+"""Render expressive project-owned cards and compact, premium action pills.
 
-V3 selectively restores the original accent rails, feature chips and larger
-cards. Canonical repository/case-study links remain native README anchors.
+V3.1 maintains verified scope, project-specific branding, and provides
+coordinated clickable action pills for case studies and repositories.
 """
-from profile_svg import image_uri, premium, text, write
+from profile_svg import action_pill, image_uri, premium, text, write
 
 PROJECTS = [
     dict(slug="fintrack", name="FinTrack 2.0", logo="fintrack-jade.png", repo="fintrack_app", case="fintrack-2",
@@ -33,49 +33,67 @@ PROJECTS = [
          highlights=["WORKSPACE STATE", "DOCUMENTS + PROJECTS", "MOCK RESPONSES"], short=["STATE", "PROJECTS", "MOCK AI"]),
 ]
 
+ACTIONS = [
+    # FinTrack
+    ("action-fintrack-case", "Explore Case Study", "case", "#65e1ad", "#0c1b1a", 196),
+    ("action-fintrack-flutter", "Flutter Repository", "repo", "#65e1ad", "#0c1b1a", 196),
+    ("action-fintrack-backend", "Backend Repository", "backend", "#65e1ad", "#0c1b1a", 196),
+    # kodehax
+    ("action-kodehax-case", "Explore Case Study", "case", "#70baff", "#111a30", 196),
+    ("action-kodehax-repo", "View Repository", "repo", "#70baff", "#111a30", 172),
+    # Provia
+    ("action-provia-case", "Explore Case Study", "case", "#f3cf69", "#211b11", 196),
+    ("action-provia-repo", "View Repository", "repo", "#f3cf69", "#211b11", 172),
+    # Nexo
+    ("action-nexo-case", "Explore Case Study", "case", "#8aaeff", "#17152c", 196),
+    ("action-nexo-repo", "View Repository", "repo", "#8aaeff", "#17152c", 172),
+]
+
 
 def render_card(project, mobile=False, index=1):
-    w,h = (360,350) if mobile else (960,324)
+    w, h = (360, 350) if mobile else (960, 324)
     pad = 20 if mobile else 32
     color = project["accent"]
-    logo_x,logo_y,logo_size = (278,51,62) if mobile else (790,43,120)
-    body = text(pad,30 if mobile else 33,f'{index:02} / {project["category"]}',11 if mobile else 13,"label")
+    logo_x, logo_y, logo_size = (278, 51, 62) if mobile else (790, 43, 120)
+    body = text(pad, 30 if mobile else 33, f'{index:02} / {project["category"]}', 11 if mobile else 13, "label")
     body += f'<rect x="{logo_x-7}" y="{logo_y-7}" width="{logo_size+14}" height="{logo_size+14}" rx="{16 if mobile else 26}" fill="{color}" fill-opacity=".06" stroke="{color}" stroke-opacity=".2"/>'
     body += f'<image href="{image_uri("assets/projects/logos/"+project["logo"])}" x="{logo_x}" y="{logo_y}" width="{logo_size}" height="{logo_size}" preserveAspectRatio="xMidYMid meet"/>'
-    body += text(pad,81 if mobile else 87,project["name"],27 if mobile else 39,"title",font_weight="600")
+    body += text(pad, 81 if mobile else 87, project["name"], 27 if mobile else 39, "title", font_weight="600")
     lines = project["mobile"] if mobile else project["description"]
-    for line_index,line in enumerate(lines):
-        body += text(pad,(147 if mobile else 126)+line_index*(25 if mobile else 27),line,17 if mobile else 20)
+    for line_index, line in enumerate(lines):
+        body += text(pad, (147 if mobile else 126) + line_index * (25 if mobile else 27), line, 17 if mobile else 20)
     if mobile:
-        for line_index,line in enumerate(project["mobile_stack"]):
-            body += text(pad,210+line_index*22,line,14,"muted")
+        for line_index, line in enumerate(project["mobile_stack"]):
+            body += text(pad, 210 + line_index * 22, line, 14, "muted")
     else:
-        body += text(pad,194,project["stack"],16,"muted")
-    x=pad
+        body += text(pad, 194, project["stack"], 16, "muted")
+    x = pad
     for label in (project["short"] if mobile else project["highlights"]):
-        size=12 if mobile else 13
-        width=len(label)*(7 if mobile else 8)+26
-        y=252 if mobile else 218
+        size = 12 if mobile else 13
+        width = len(label) * (7 if mobile else 8) + 26
+        y = 252 if mobile else 218
         body += f'<rect x="{x}" y="{y}" width="{width}" height="30" rx="7" fill="{color}" fill-opacity=".07" stroke="{color}" stroke-opacity=".23"/>'
-        body += text(x+width/2,y+20,label,size,"body",text_anchor="middle")
-        x+=width+8
+        body += text(x + width / 2, y + 20, label, size, "body", text_anchor="middle")
+        x += width + 8
     line_y = 302 if mobile else 274
     body += f'<path d="M{pad} {line_y}H{w-pad}" stroke="{color}" stroke-opacity=".2"/>'
-    body += text(pad,line_y+27,project["status"],12.5 if mobile else 14,"accent")
+    body += text(pad, line_y + 27, project["status"], 12.5 if mobile else 14, "accent")
     if not mobile:
-        body += text(w-pad,line_y+27,"VIEW REPOSITORY  ↗",13,"accent",text_anchor="end")
-    desc=f'{project["name"]}. {" ".join(project["description"])} {project["stack"]}. {project["status"]}.'
-    return premium(w,h,project["name"],desc,body,color,project["secondary"],project["base"])
+        body += text(w - pad, line_y + 27, "VIEW REPOSITORY  ↗", 13, "accent", text_anchor="end")
+    desc = f'{project["name"]}. {" ".join(project["description"])} {project["stack"]}. {project["status"]}.'
+    return premium(w, h, project["name"], desc, body, color, project["secondary"], project["base"])
 
 
-def render_mobile_card(project,index=1):
-    return render_card(project,True,index)
+def render_mobile_card(project, index=1):
+    return render_card(project, True, index)
 
 
 def main():
-    for index,project in enumerate(PROJECTS,1):
-        write(f'assets/projects/{project["slug"]}.svg',render_card(project,index=index))
-        write(f'assets/projects/{project["slug"]}-mobile.svg',render_mobile_card(project,index))
+    for index, project in enumerate(PROJECTS, 1):
+        write(f'assets/projects/{project["slug"]}.svg', render_card(project, index=index))
+        write(f'assets/projects/{project["slug"]}-mobile.svg', render_mobile_card(project, index))
+    for slug, label, kind, accent, base, width in ACTIONS:
+        write(f'assets/projects/{slug}.svg', action_pill(width, 36, label, kind, accent, base))
 
 
 if __name__ == "__main__":
