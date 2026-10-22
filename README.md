@@ -4,12 +4,28 @@
 </picture>
 
 <p align="center">
-  <a href="https://mubashir-portfolio-orpin.vercel.app"><img src="./assets/cta/visit-portfolio.svg" width="400" alt="Visit My Portfolio ↗ — case studies, craft and the thinking behind it" /></a>
+  <a href="https://mubashir-portfolio-orpin.vercel.app">
+    <picture>
+      <source media="(max-width: 600px)" srcset="./assets/cta/visit-portfolio-mobile.svg" />
+      <img src="./assets/cta/visit-portfolio.svg" width="580" alt="Visit My Portfolio ↗ — Explore projects, case studies &amp; the thinking behind them." />
+    </picture>
+  </a>
 </p>
 
 <p align="center">
-  <a href="#selected-work">Selected work</a> &nbsp;·&nbsp;
-  <a href="mailto:mklmubashir575@gmail.com">Get in touch</a>
+  <a href="#selected-work">
+    <picture>
+      <source media="(max-width: 600px)" srcset="./assets/cta/explore-work-mobile.svg" />
+      <img src="./assets/cta/explore-work.svg" width="430" alt="Explore My Work ↗ — Projects, systems &amp; products I've built." />
+    </picture>
+  </a>
+  &nbsp;
+  <a href="#contact">
+    <picture>
+      <source media="(max-width: 600px)" srcset="./assets/cta/chat-with-me-mobile.svg" />
+      <img src="./assets/cta/chat-with-me.svg" width="430" alt="Let's Connect ↗ — Have an idea? I'd love to hear it." />
+    </picture>
+  </a>
 </p>
 
 <a id="about"></a>
@@ -36,7 +52,11 @@ Four projects across personal finance, developer education, service discovery an
 
 **Implemented:** accounts, transactions, budgets, reports, SMS review and the deterministic FIN companion. **Active development;** live currency conversion is planned.
 
-**[Explore case study ↗](https://mubashir-portfolio-orpin.vercel.app/work/fintrack-2)** · [App repository](https://github.com/Mubashir-114/fintrack_app) · [Backend](https://github.com/Mubashir-114/fintrack_backend)
+<p>
+  <a href="https://mubashir-portfolio-orpin.vercel.app/work/fintrack-2"><img src="./assets/projects/action-fintrack-case.svg" alt="Explore Case Study ↗" /></a> &nbsp;
+  <a href="https://github.com/Mubashir-114/fintrack_app"><img src="./assets/projects/action-fintrack-flutter.svg" alt="Flutter Repository ↗" /></a> &nbsp;
+  <a href="https://github.com/Mubashir-114/fintrack_backend"><img src="./assets/projects/action-fintrack-backend.svg" alt="Backend Repository ↗" /></a>
+</p>
 
 <a href="https://github.com/Mubashir-114/kodehax_academy">
   <picture>
@@ -47,7 +67,10 @@ Four projects across personal finance, developer education, service discovery an
 
 **Implemented:** student and teacher workflows, classrooms, coding challenges, assessments and Groq-assisted tutoring. AI features require a configured Groq service; further analytics and mobile coverage remain on the roadmap.
 
-**[Explore case study ↗](https://mubashir-portfolio-orpin.vercel.app/work/kodehax-academy)** · [Repository](https://github.com/Mubashir-114/kodehax_academy)
+<p>
+  <a href="https://mubashir-portfolio-orpin.vercel.app/work/kodehax-academy"><img src="./assets/projects/action-kodehax-case.svg" alt="Explore Case Study ↗" /></a> &nbsp;
+  <a href="https://github.com/Mubashir-114/kodehax_academy"><img src="./assets/projects/action-kodehax-repo.svg" alt="View Repository ↗" /></a>
+</p>
 
 <a href="https://github.com/Mubashir-114/Provia">
   <picture>
@@ -58,7 +81,10 @@ Four projects across personal finance, developer education, service discovery an
 
 **Implemented:** service discovery, booking workflows and customer-provider WebSocket chat. **Active development; checkout simulates payments** and does not demonstrate live payment processing.
 
-**[Explore case study ↗](https://mubashir-portfolio-orpin.vercel.app/work/provia)** · [Repository](https://github.com/Mubashir-114/Provia)
+<p>
+  <a href="https://mubashir-portfolio-orpin.vercel.app/work/provia"><img src="./assets/projects/action-provia-case.svg" alt="Explore Case Study ↗" /></a> &nbsp;
+  <a href="https://github.com/Mubashir-114/Provia"><img src="./assets/projects/action-provia-repo.svg" alt="View Repository ↗" /></a>
+</p>
 
 <a href="https://github.com/Mubashir-114/Nexo-frontend">
   <picture>
@@ -69,7 +95,10 @@ Four projects across personal finance, developer education, service discovery an
 
 **Frontend demonstration:** conversations, documents, projects and workspace search using domain-specific Zustand stores. AI responses and retrieval are mocked; no live model is connected.
 
-**[Explore case study ↗](https://mubashir-portfolio-orpin.vercel.app/work/nexo)** · [Repository](https://github.com/Mubashir-114/Nexo-frontend)
+<p>
+  <a href="https://mubashir-portfolio-orpin.vercel.app/work/nexo"><img src="./assets/projects/action-nexo-case.svg" alt="Explore Case Study ↗" /></a> &nbsp;
+  <a href="https://github.com/Mubashir-114/Nexo-frontend"><img src="./assets/projects/action-nexo-repo.svg" alt="View Repository ↗" /></a>
+</p>
 
 <a id="current-focus"></a>
 <h2><picture><source media="(max-width: 600px)" srcset="./assets/ui/section-03-mobile.svg" /><img src="./assets/ui/section-03.svg" width="100%" alt="03 / Current focus" /></picture></h2>
@@ -101,7 +130,28 @@ Four projects across personal finance, developer education, service discovery an
 
 Have a concrete problem or an idea worth building? I'm interested in thoughtful web products, Flutter applications and connected backend systems.
 
-**[Email me](mailto:mklmubashir575@gmail.com)** · [LinkedIn](https://www.linkedin.com/in/mubashir-kc-b630b73a4) · [Visit portfolio](https://mubashir-portfolio-orpin.vercel.app)
+<p align="center">
+  <a href="mailto:mklmubashir575@gmail.com">
+    <picture>
+      <source media="(max-width: 600px)" srcset="./assets/ui/contact-email-mobile.svg" />
+      <img src="./assets/ui/contact-email.svg" width="282" alt="Email Me ↗ — Direct professional contact." />
+    </picture>
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/mubashir-kc-b630b73a4">
+    <picture>
+      <source media="(max-width: 600px)" srcset="./assets/ui/contact-linkedin-mobile.svg" />
+      <img src="./assets/ui/contact-linkedin.svg" width="282" alt="LinkedIn ↗ — Connect professionally." />
+    </picture>
+  </a>
+  &nbsp;
+  <a href="https://mubashir-portfolio-orpin.vercel.app">
+    <picture>
+      <source media="(max-width: 600px)" srcset="./assets/ui/contact-portfolio-mobile.svg" />
+      <img src="./assets/ui/contact-portfolio.svg" width="282" alt="Visit Portfolio ↗ — Explore my work." />
+    </picture>
+  </a>
+</p>
 
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/footer-mobile.svg" />
