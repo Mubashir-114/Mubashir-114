@@ -13,6 +13,10 @@ V3 adds the same pinned release's `nextjs/nextjs-original.svg`,
 `typescript/typescript-original.svg` and
 `githubactions/githubactions-original.svg`. They are unmodified local SVG
 copies. Icons are consistently sized and paired with visible technology names.
-Systems/API concepts and Provider are text labels; no generic logo substitutes
-are presented as official technology marks. The groups communicate tools used,
-not proficiency scores.
+
+V3.1 standardizes the entire toolkit into a unified visual item system:
+- Provider uses a Flutter-coordinated state hierarchy symbol (`provider.svg`).
+- Systems + APIs capabilities use minimal, standardized technical line symbols:
+  REST APIs (`restapi.svg`), WebSockets (`websockets.svg`), Authentication (`auth.svg`),
+  and Role-based Access (`rbac.svg`).
+All items share the identical container geometry, corner radius, alignment, and typography.
