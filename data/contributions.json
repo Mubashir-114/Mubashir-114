@@ -2,10 +2,10 @@
   "username": "Mubashir-114",
   "source": "github_graphql_contribution_calendar",
   "visibility": "contribution data available to the workflow token",
-  "generated_at": "2026-10-31T21:46:40Z",
+  "generated_at": "2026-11-01T22:14:30Z",
   "range": {
-    "start": "2025-10-31",
-    "end": "2026-10-31"
+    "start": "2025-11-02",
+    "end": "2026-11-01"
   },
   "total_contributions": 517,
   "active_days": 91,
@@ -25,10 +25,6 @@
     "count": 21
   },
   "monthly": [
-    {
-      "month": "2025-10",
-      "total": 0
-    },
     {
       "month": "2025-11",
       "total": 0
@@ -76,17 +72,13 @@
     {
       "month": "2026-10",
       "total": 247
+    },
+    {
+      "month": "2026-11",
+      "total": 0
     }
   ],
   "days": [
-    {
-      "date": "2025-10-31",
-      "count": 0
-    },
-    {
-      "date": "2025-11-01",
-      "count": 0
-    },
     {
       "date": "2025-11-02",
       "count": 0
@@ -1541,6 +1533,10 @@
     },
     {
       "date": "2026-10-31",
+      "count": 0
+    },
+    {
+      "date": "2026-11-01",
       "count": 0
     }
   ]
